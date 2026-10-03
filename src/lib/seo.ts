@@ -17,7 +17,7 @@ export function buildMeta({
   description,
   path = "",
   noIndex = false,
-  image = "/images/hero-family.jpg",
+  image = "/images/indira-hospital-building.jpg",
 }: MetaInput): Metadata {
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
   const canonicalUrl = `${SITE_URL}${cleanPath === "/" ? "" : cleanPath}`;
