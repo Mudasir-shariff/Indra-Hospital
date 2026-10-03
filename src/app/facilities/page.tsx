@@ -6,14 +6,25 @@ import CtaSection from "@/components/CtaSection";
 import { facilitiesData } from "@/data/facilities";
 import { CheckCircle2, Building, ShieldCheck, Microscope, HeartPulse } from "lucide-react";
 
-export const metadata = {
-  title: "Facilities & Infrastructure | Indira Hospital Chintamani",
-  description: "Explore our 30-bed hospital infrastructure, two advanced modular operation theatres, two digital C-Arms, 24/7 digital X-ray, lab, and physiotherapy centre.",
-};
+import { buildMeta, getBreadcrumbJsonLd } from "@/lib/seo";
+
+export const metadata = buildMeta({
+  title: "Facilities & Infrastructure | Indira Hospital, Chintamani",
+  description: "Explore Indira Hospital's 30-bed surgical infrastructure: 2 modular OTs, digital C-Arms, 24/7 digital X-ray, automated lab & rehabilitation centre.",
+  path: "/facilities",
+});
 
 export default function FacilitiesPage() {
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Facilities", path: "/facilities" },
+  ]);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navbar isHeroFloating={false} />
 
       <SubpageHero

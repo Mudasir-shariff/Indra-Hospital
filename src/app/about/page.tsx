@@ -6,14 +6,25 @@ import CtaSection from "@/components/CtaSection";
 import { siteData } from "@/data/site";
 import { Award, Building2, HeartHandshake, ShieldCheck, CheckCircle2 } from "lucide-react";
 
-export const metadata = {
-  title: "About Us | Indira Hospital Chintamani",
-  description: "Learn about Indira Hospital's journey from a small clinic in 1998 to a premier 30-bed Super Speciality Orthopaedics & Urology Center.",
-};
+import { buildMeta, getBreadcrumbJsonLd } from "@/lib/seo";
+
+export const metadata = buildMeta({
+  title: "About Indira Hospital | Ortho & Urology in Chintamani",
+  description: "Established in 1998, Indira Hospital is Chintamani's trusted 30-bed super speciality orthopaedic and urology hospital serving Chikkaballapur district.",
+  path: "/about",
+});
 
 export default function AboutPage() {
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "About Us", path: "/about" },
+  ]);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navbar isHeroFloating={false} />
       
       <SubpageHero

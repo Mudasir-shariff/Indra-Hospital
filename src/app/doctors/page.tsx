@@ -8,17 +8,33 @@ import { doctorsData, visitingSpecialists } from "@/data/doctors";
 import { Stethoscope, Award, CheckCircle2, Calendar, Phone } from "lucide-react";
 import { siteData } from "@/data/site";
 
-export const metadata = {
-  title: "Our Doctors & Specialists | Indira Hospital Chintamani",
-  description: "Meet our experienced team of orthopaedic surgeons, urologists, gynaecologists, maxillofacial surgeons, anaesthetists and visiting consultants.",
-};
+import { buildMeta, getDoctorListJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
+
+export const metadata = buildMeta({
+  title: "Our Doctors & Specialists | Indira Hospital, Chintamani",
+  description: "Meet our specialist doctors in Chintamani: expert orthopaedic surgeons, urologists, gynaecologists, maxillofacial surgeons & anaesthetists.",
+  path: "/doctors",
+});
 
 export default function DoctorsPage() {
   const consultants = doctorsData.filter((d) => d.department !== "Anaesthesiology" && d.department !== "Anaesthesiology & Critical Care");
   const anaesthetists = doctorsData.filter((d) => d.department.includes("Anaesthesiology"));
 
+  const doctorListJsonLd = getDoctorListJsonLd();
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Doctors", path: "/doctors" },
+  ]);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(doctorListJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navbar isHeroFloating={false} />
 
       <SubpageHero

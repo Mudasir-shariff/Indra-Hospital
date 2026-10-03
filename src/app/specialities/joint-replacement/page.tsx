@@ -6,10 +6,13 @@ import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
 import { CheckCircle2, Bone, Activity, ShieldCheck, HeartHandshake } from "lucide-react";
 
-export const metadata = {
-  title: "Joint Replacement Surgery (TKR & THR) | Indira Hospital",
-  description: "Total Knee Replacement (TKR), Total Hip Replacement (THR), and Revision Arthroplasty performed by senior surgeons in modular laminar airflow theatres in Chintamani.",
-};
+import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
+
+export const metadata = buildMeta({
+  title: "Joint Replacement in Chintamani | Indira Hospital",
+  description: "Total Knee Replacement (TKR) and Total Hip Replacement (THR) in Chintamani. Performed by senior surgeons in modular laminar airflow theatres.",
+  path: "/specialities/joint-replacement",
+});
 
 export default function JointReplacementPage() {
   const procedures = [
@@ -31,8 +34,28 @@ export default function JointReplacementPage() {
     }
   ];
 
+  const specialityJsonLd = getSpecialityJsonLd({
+    name: "Joint Replacement Surgery",
+    description: "Advanced Total Knee Replacement and Total Hip Replacement surgery at Indira Hospital Chintamani, Karnataka.",
+    path: "/specialities/joint-replacement",
+    procedures: procedures.map((p) => p.title),
+  });
+
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Specialities", path: "/specialities/orthopaedics" },
+    { name: "Joint Replacement", path: "/specialities/joint-replacement" },
+  ]);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(specialityJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navbar isHeroFloating={false} />
 
       <SubpageHero

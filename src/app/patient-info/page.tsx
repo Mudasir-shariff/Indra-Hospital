@@ -14,14 +14,25 @@ import {
   AlertCircle 
 } from "lucide-react";
 
-export const metadata = {
-  title: "Patient Information & OPD Timings | Indira Hospital Chintamani",
-  description: "Essential patient information: Outpatient (OPD) consultation timings, visiting hours, admission and discharge guidelines, and patient rights.",
-};
+import { buildMeta, getBreadcrumbJsonLd } from "@/lib/seo";
+
+export const metadata = buildMeta({
+  title: "OPD Timings & Patient Guide | Indira Hospital, Chintamani",
+  description: "Patient guide & OPD consultation timings at Indira Hospital Chintamani: morning & evening specialist clinics, visiting hours, admission process & rights.",
+  path: "/patient-info",
+});
 
 export default function PatientInfoPage() {
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Patient Guide", path: "/patient-info" },
+  ]);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navbar isHeroFloating={false} />
 
       <SubpageHero

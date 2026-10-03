@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
+import { SITE_URL } from "@/lib/seo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -14,17 +15,25 @@ const manrope = Manrope({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#0068B0",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Indira Hospital — Super Speciality Ortho & Urology Center | Chintamani",
   description: "Leading 30-bed Super Speciality Orthopaedic & Urology hospital in Chintamani, Karnataka. Advanced modular operation theatres, digital C-Arm imaging, 24/7 emergency trauma care, joint replacement, and laser urology.",
   keywords: [
     "Indira Hospital Chintamani",
-    "Orthopaedic Surgeon Chintamani",
+    "Orthopaedic Hospital Chintamani",
+    "Bone Doctor Chintamani",
+    "Joint Replacement Chintamani",
     "Urology Hospital Karnataka",
+    "Kidney Stone Laser Surgery Chintamani",
     "Dr Venkatesh KR",
     "Dr Shashank KA",
-    "Joint Replacement Surgery",
-    "Kidney Stone Laser Surgery",
     "Fracture Care 24/7"
   ],
   icons: {

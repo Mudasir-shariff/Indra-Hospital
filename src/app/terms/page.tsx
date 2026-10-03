@@ -5,10 +5,14 @@ import SubpageHero from "@/components/SubpageHero";
 import { siteData } from "@/data/site";
 import { AlertTriangle, FileText, CheckCircle2, ShieldAlert, Phone } from "lucide-react";
 
-export const metadata = {
-  title: "Terms of Use | Indira Hospital Chintamani",
-  description: "Terms and conditions of using the website and informational services of Indira Hospital — Super Speciality Ortho & Urology Center.",
-};
+import { buildMeta } from "@/lib/seo";
+
+export const metadata = buildMeta({
+  title: "Terms | Indira Hospital",
+  description: "Terms and conditions of using the website and informational healthcare services of Indira Hospital Chintamani.",
+  path: "/terms",
+  noIndex: true,
+});
 
 export default function TermsPage() {
   return (

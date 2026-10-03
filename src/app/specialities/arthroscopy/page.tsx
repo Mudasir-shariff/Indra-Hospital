@@ -6,10 +6,13 @@ import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
 import { CheckCircle2, Zap, Activity } from "lucide-react";
 
-export const metadata = {
-  title: "Arthroscopic Keyhole Surgery | Indira Hospital Chintamani",
-  description: "Minimally invasive keyhole joint surgery for ACL/PCL ligament tears, meniscus injuries, rotator cuff tears, and shoulder instability.",
-};
+import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
+
+export const metadata = buildMeta({
+  title: "Arthroscopic Surgery in Chintamani | Indira Hospital",
+  description: "Minimally invasive keyhole joint surgery in Chintamani: ACL/PCL ligament reconstruction, meniscus repair, and rotator cuff surgery.",
+  path: "/specialities/arthroscopy",
+});
 
 export default function ArthroscopyPage() {
   const procedures = [
@@ -39,8 +42,28 @@ export default function ArthroscopyPage() {
     }
   ];
 
+  const specialityJsonLd = getSpecialityJsonLd({
+    name: "Arthroscopic (Keyhole) Surgery",
+    description: "Minimally invasive keyhole joint surgery for sports injuries, ligament reconstructions, and cartilage repairs at Indira Hospital Chintamani.",
+    path: "/specialities/arthroscopy",
+    procedures: procedures.map((p) => p.title),
+  });
+
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Specialities", path: "/specialities/orthopaedics" },
+    { name: "Arthroscopy", path: "/specialities/arthroscopy" },
+  ]);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(specialityJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navbar isHeroFloating={false} />
 
       <SubpageHero

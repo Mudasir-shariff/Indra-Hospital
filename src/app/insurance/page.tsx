@@ -6,14 +6,25 @@ import CtaSection from "@/components/CtaSection";
 import { insuranceData } from "@/data/insurance";
 import { ShieldCheck, Phone, CheckCircle2, FileText, ArrowRight } from "lucide-react";
 
-export const metadata = {
-  title: "Insurance & Cashless TPA Services | Indira Hospital Chintamani",
-  description: "Avail cashless hospitalization and insurance reimbursement for orthopaedic and urology surgeries at Indira Hospital. Contact Insurance Desk: +91 99805 65420.",
-};
+import { buildMeta, getBreadcrumbJsonLd } from "@/lib/seo";
+
+export const metadata = buildMeta({
+  title: "Insurance & Cashless TPA | Indira Hospital, Chintamani",
+  description: "Cashless mediclaim & TPA insurance services for orthopaedic and urology surgeries at Indira Hospital Chintamani. Dedicated insurance desk: +91 99805 65420.",
+  path: "/insurance",
+});
 
 export default function InsurancePage() {
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Insurance & TPA", path: "/insurance" },
+  ]);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navbar isHeroFloating={false} />
 
       <SubpageHero

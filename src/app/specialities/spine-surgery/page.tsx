@@ -6,10 +6,13 @@ import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
 import { CheckCircle2, Layers, ShieldCheck } from "lucide-react";
 
-export const metadata = {
-  title: "Spine Surgery | Indira Hospital Chintamani",
-  description: "Comprehensive surgical treatment for spinal disorders, lumbar disc herniation, sciatica, spinal canal stenosis, and spinal stabilization.",
-};
+import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
+
+export const metadata = buildMeta({
+  title: "Spine Surgery in Chintamani | Indira Hospital",
+  description: "Specialist spine surgery in Chintamani: microdiscectomy, decompression, fusion & pedicle fixation for sciatica and disc herniation.",
+  path: "/specialities/spine-surgery",
+});
 
 export default function SpineSurgeryPage() {
   const procedures = [
@@ -31,8 +34,28 @@ export default function SpineSurgeryPage() {
     }
   ];
 
+  const specialityJsonLd = getSpecialityJsonLd({
+    name: "Spine Surgery & Decompression",
+    description: "Surgical care for spinal disorders, nerve compression, disc herniations, and spinal stabilization at Indira Hospital Chintamani.",
+    path: "/specialities/spine-surgery",
+    procedures: procedures.map((p) => p.title),
+  });
+
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Specialities", path: "/specialities/orthopaedics" },
+    { name: "Spine Surgery", path: "/specialities/spine-surgery" },
+  ]);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(specialityJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navbar isHeroFloating={false} />
 
       <SubpageHero

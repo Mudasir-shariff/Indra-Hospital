@@ -5,10 +5,14 @@ import SubpageHero from "@/components/SubpageHero";
 import { siteData } from "@/data/site";
 import { ShieldCheck, Lock, Eye, FileText, Phone, Mail } from "lucide-react";
 
-export const metadata = {
-  title: "Privacy Policy | Indira Hospital Chintamani",
-  description: "Privacy policy and medical data confidentiality guidelines for patients and visitors of Indira Hospital — Super Speciality Ortho & Urology Center.",
-};
+import { buildMeta } from "@/lib/seo";
+
+export const metadata = buildMeta({
+  title: "Privacy Policy | Indira Hospital",
+  description: "Privacy policy and medical confidentiality guidelines for patients and visitors of Indira Hospital Chintamani.",
+  path: "/privacy",
+  noIndex: true,
+});
 
 export default function PrivacyPolicyPage() {
   return (

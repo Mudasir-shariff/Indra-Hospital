@@ -6,10 +6,13 @@ import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
 import { CheckCircle2, Droplets, Zap, ShieldCheck } from "lucide-react";
 
-export const metadata = {
-  title: "Kidney Stone Surgery (Laser, RIRS, PCNL) | Indira Hospital",
-  description: "Advanced minimally invasive laser kidney stone surgery: RIRS, PCNL, Mini-PCNL, URS, and cystolithotripsy with fastest recovery.",
-};
+import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
+
+export const metadata = buildMeta({
+  title: "Kidney Stone Laser Surgery in Chintamani | Indira Hospital",
+  description: "Advanced laser kidney stone surgery in Chintamani: RIRS scarless laser treatment, PCNL, Mini-PCNL & URS with fast recovery and high clearance.",
+  path: "/specialities/kidney-stones",
+});
 
 export default function KidneyStonesPage() {
   const procedures = [
@@ -35,8 +38,28 @@ export default function KidneyStonesPage() {
     }
   ];
 
+  const specialityJsonLd = getSpecialityJsonLd({
+    name: "Kidney Stone Laser Clinic",
+    description: "Minimally invasive laser kidney stone surgery including RIRS, PCNL, Mini-PCNL and URS at Indira Hospital Chintamani.",
+    path: "/specialities/kidney-stones",
+    procedures: procedures.map((p) => p.title),
+  });
+
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Urology", path: "/specialities/urology" },
+    { name: "Kidney Stones", path: "/specialities/kidney-stones" },
+  ]);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(specialityJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navbar isHeroFloating={false} />
 
       <SubpageHero

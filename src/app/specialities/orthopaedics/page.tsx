@@ -7,14 +7,37 @@ import CtaSection from "@/components/CtaSection";
 import { orthopaedicDepartment } from "@/data/specialities";
 import { ArrowRight, CheckCircle2, Bone, Shield, Activity } from "lucide-react";
 
-export const metadata = {
-  title: "Orthopaedic Surgeries | Indira Hospital Chintamani",
-  description: "Comprehensive orthopaedic surgical care: Joint Replacement (TKR/THR), Trauma & Fracture, Arthroscopy, Spine Surgery, and Deformity Correction.",
-};
+import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
+
+export const metadata = buildMeta({
+  title: "Orthopaedic Surgeries in Chintamani | Indira Hospital",
+  description: "Comprehensive orthopaedic surgical care in Chintamani: Joint Replacement (TKR/THR), 24/7 Fracture Trauma, Arthroscopy, and Spine Surgery.",
+  path: "/specialities/orthopaedics",
+});
 
 export default function OrthopaedicsPage() {
+  const specialityJsonLd = getSpecialityJsonLd({
+    name: "Orthopaedic Surgery",
+    description: "Advanced orthopaedic surgical solutions for bone, joint, spine, sports injuries, and trauma in Chintamani, Karnataka.",
+    path: "/specialities/orthopaedics",
+    procedures: orthopaedicDepartment.highlights,
+  });
+
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Specialities", path: "/#specialities" },
+    { name: "Orthopaedics", path: "/specialities/orthopaedics" },
+  ]);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(specialityJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navbar isHeroFloating={false} />
 
       <SubpageHero

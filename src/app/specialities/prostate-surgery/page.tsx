@@ -6,10 +6,13 @@ import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
 import { CheckCircle2, Activity, ShieldCheck } from "lucide-react";
 
-export const metadata = {
-  title: "Prostate Surgery (TURP & Laser) | Indira Hospital Chintamani",
-  description: "Advanced surgical treatment for Benign Prostatic Hyperplasia (BPH), enlarged prostate, urinary obstruction: TURP, HoLEP laser enucleation.",
-};
+import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
+
+export const metadata = buildMeta({
+  title: "Prostate Surgery in Chintamani | Indira Hospital",
+  description: "Expert prostate surgery in Chintamani: TURP, HoLEP laser enucleation & BPH care for enlarged prostate and urinary obstruction with rapid recovery.",
+  path: "/specialities/prostate-surgery",
+});
 
 export default function ProstateSurgeryPage() {
   const procedures = [
@@ -31,8 +34,28 @@ export default function ProstateSurgeryPage() {
     }
   ];
 
+  const specialityJsonLd = getSpecialityJsonLd({
+    name: "Prostate Surgery & BPH Care",
+    description: "Surgical management for enlarged prostate, weak urinary stream, frequent night urination, and acute urinary retention at Indira Hospital Chintamani.",
+    path: "/specialities/prostate-surgery",
+    procedures: procedures.map((p) => p.title),
+  });
+
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Urology", path: "/specialities/urology" },
+    { name: "Prostate Surgery", path: "/specialities/prostate-surgery" },
+  ]);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(specialityJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navbar isHeroFloating={false} />
 
       <SubpageHero

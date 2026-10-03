@@ -7,10 +7,13 @@ import Link from "next/link";
 import { CheckCircle2, ShieldAlert, Activity, Clock, Phone } from "lucide-react";
 import { siteData } from "@/data/site";
 
-export const metadata = {
-  title: "Trauma & Fracture Surgery | Indira Hospital Chintamani",
-  description: "24/7 emergency surgical management of simple, complex, and high-energy fractures, pelvic injuries, and non-unions.",
-};
+import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
+
+export const metadata = buildMeta({
+  title: "Trauma & Fracture Surgery in Chintamani | Indira Hospital",
+  description: "24/7 emergency fracture care & trauma surgery in Chintamani: ORIF/CRIF fixation, interlocking nailing, and pelvic trauma management.",
+  path: "/specialities/trauma-fracture",
+});
 
 export default function TraumaFracturePage() {
   const procedures = [
@@ -36,8 +39,28 @@ export default function TraumaFracturePage() {
     }
   ];
 
+  const specialityJsonLd = getSpecialityJsonLd({
+    name: "Trauma & Fracture Surgery",
+    description: "24/7 emergency fracture fixation and complex orthopedic trauma surgical care at Indira Hospital Chintamani, Karnataka.",
+    path: "/specialities/trauma-fracture",
+    procedures: procedures.map((p) => p.title),
+  });
+
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Specialities", path: "/specialities/orthopaedics" },
+    { name: "Trauma & Fracture Care", path: "/specialities/trauma-fracture" },
+  ]);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(specialityJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navbar isHeroFloating={false} />
 
       <SubpageHero

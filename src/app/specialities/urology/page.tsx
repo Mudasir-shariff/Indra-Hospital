@@ -7,14 +7,37 @@ import CtaSection from "@/components/CtaSection";
 import { urologyDepartment } from "@/data/specialities";
 import { ArrowRight, CheckCircle2, Droplets, Activity, ShieldCheck } from "lucide-react";
 
-export const metadata = {
-  title: "Urology Surgeries | Indira Hospital Chintamani",
-  description: "Comprehensive urology care: Kidney Stone Laser Surgery (RIRS/PCNL), Prostate Surgery (TURP/HoLEP), Uro-oncology, Reconstructive & Paediatric Urology.",
-};
+import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
+
+export const metadata = buildMeta({
+  title: "Urology Surgeries in Chintamani | Indira Hospital",
+  description: "Advanced urology hospital in Chintamani: Holmium laser kidney stone surgery (RIRS/PCNL), prostate surgery (TURP), uro-oncology & pediatric urology.",
+  path: "/specialities/urology",
+});
 
 export default function UrologyPage() {
+  const specialityJsonLd = getSpecialityJsonLd({
+    name: "Urology & Endourology",
+    description: "Advanced urological and laser surgeries for kidney stones, prostate disorders, and urinary tract conditions at Indira Hospital Chintamani.",
+    path: "/specialities/urology",
+    procedures: urologyDepartment.highlights,
+  });
+
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Specialities", path: "/#specialities" },
+    { name: "Urology", path: "/specialities/urology" },
+  ]);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(specialityJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navbar isHeroFloating={false} />
 
       <SubpageHero
