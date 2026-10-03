@@ -9,8 +9,8 @@ import { Award, Building2, HeartHandshake, ShieldCheck, CheckCircle2 } from "luc
 import { buildMeta, getBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata = buildMeta({
-  title: "About Indira Hospital | Ortho & Urology in Chintamani",
-  description: "Established in 1998, Indira Hospital is Chintamani's trusted 30-bed super speciality orthopaedic and urology hospital serving Chikkaballapur district.",
+  title: "About INDIRA HOSPITAL | Super Speciality & Multispeciality Hospital, Chintamani",
+  description: "Established in 1998, Indira Hospital is Chintamani's trusted 30-bed Super Speciality & Multispeciality Hospital offering Daily OPD in Orthopaedics, Urology, and General Medicine, plus specialist care in Nephrology and Dermatology.",
   path: "/about",
 });
 
@@ -30,7 +30,7 @@ export default function AboutPage() {
       <SubpageHero
         category="Hospital Background & Legacy"
         title="Over 28 Years of Healing with Compassion and Precision"
-        subtitle="The journey of Indira Hospital, Chintamani — from a dedicated outpatient clinic in 1998 to a modern 30-bed Super Speciality Orthopaedics & Urology surgical centre."
+        subtitle="The journey of Indira Hospital, Chintamani — from a dedicated outpatient clinic in 1998 to a modern 30-bed Super Speciality & Multispeciality Hospital."
         breadcrumbs={[{ label: "Home", href: "/" }]}
       />
 
@@ -47,7 +47,7 @@ export default function AboutPage() {
                 <p key={i}>{para}</p>
               ))}
               <p>
-                Today, Indira Hospital proudly stands as a Super Speciality Orthopaedics & Urology Centre, offering advanced diagnostics, modern surgical procedures, specialist consultations, and personalized treatment plans designed around each patient's unique recovery goals.
+                Today, Indira Hospital proudly stands as a Super Speciality & Multispeciality Hospital, offering daily OPD for Orthopaedics, Urology, and General Medicine, advanced modular surgical procedures, and appointment-based specialist consultations in Nephrology, Dermatology, and surgical disciplines.
               </p>
               <p>
                 With a team of experienced doctors, skilled nurses, operation theatre technicians, physiotherapists, and dedicated healthcare staff, we remain committed to providing healthcare built on compassion, clinical excellence, patient safety, and trust.

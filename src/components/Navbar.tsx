@@ -65,8 +65,8 @@ export default function Navbar({ isHeroFloating = true }: { isHeroFloating?: boo
                 <span className="text-[#C03A21]">INDIRA</span>
                 <span className="text-[#0068B0]">HOSPITAL</span>
               </span>
-              <span className="text-[9px] sm:text-[10px] tracking-wider uppercase text-muted font-medium mt-0.5 hidden xs:block">
-                Super Speciality Center
+              <span className="text-[8.5px] sm:text-[9.5px] tracking-wider uppercase text-muted font-bold mt-0.5">
+                SUPER SPECIALITY & MULTISPECIALITY HOSPITAL
               </span>
             </div>
           </Link>
@@ -176,9 +176,14 @@ export default function Navbar({ isHeroFloating = true }: { isHeroFloating?: boo
                     className="object-cover"
                   />
                 </div>
-                <span className="font-heading font-bold text-sm text-charcoal">
-                  INDIRA HOSPITAL
-                </span>
+                <div className="flex flex-col">
+                  <span className="font-heading font-bold text-sm text-charcoal">
+                    INDIRA HOSPITAL
+                  </span>
+                  <span className="text-[8px] tracking-wider uppercase text-muted font-bold">
+                    SUPER SPECIALITY & MULTISPECIALITY HOSPITAL
+                  </span>
+                </div>
               </div>
               <button
                 onClick={() => setMobileMenuOpen(false)}

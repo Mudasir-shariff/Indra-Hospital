@@ -15,11 +15,25 @@ export interface Department {
   subSpecialities: SubSpeciality[];
 }
 
+export interface HospitalSpeciality {
+  id: string;
+  name: string;
+  category: "Super Speciality" | "Multispeciality";
+  opdType: "Daily OPD" | "Appointment Basis";
+  opdBadge: "Daily OPD Available" | "Available on Appointment Basis";
+  scheduleInfo: string;
+  shortDesc: string;
+  iconName: string;
+  procedures: string[];
+  href?: string;
+  departmentRef?: "ortho" | "uro" | "multispeciality";
+}
+
 export const orthopaedicDepartment: Department = {
   slug: "orthopaedics",
   title: "Orthopaedic Surgeries",
   headline: "Advanced Orthopaedic Care with Precision, Expertise & Compassion",
-  description: "At Indira Hospital – Super Speciality Ortho & Urology Center, we provide comprehensive orthopaedic care for patients of all ages, offering advanced surgical solutions for bone, joint, spine, sports injuries, and trauma. Our experienced orthopaedic surgeons utilize modern surgical techniques, advanced modular operation theatres, and evidence-based treatment protocols to help patients regain mobility, relieve pain, and return to an active lifestyle.",
+  description: "At Indira Hospital – Super Speciality & Multispeciality Hospital, we provide comprehensive orthopaedic care for patients of all ages, offering advanced surgical solutions for bone, joint, spine, sports injuries, and trauma. Our experienced orthopaedic surgeons utilize modern surgical techniques, advanced modular operation theatres, and evidence-based treatment protocols to help patients regain mobility, relieve pain, and return to an active lifestyle.",
   highlights: [
     "Experienced Orthopaedic Surgeons with 30+ years clinical excellence",
     "Two Advanced Modular Operation Theatres with laminar airflow",
@@ -147,7 +161,7 @@ export const urologyDepartment: Department = {
   slug: "urology",
   title: "Urology Surgeries",
   headline: "Advanced Urological Care with Precision, Expertise & Compassion",
-  description: "At Indira Hospital – Super Speciality Ortho & Urology Center, our Urology Department provides comprehensive diagnosis and advanced surgical treatment for conditions affecting the kidneys, ureters, bladder, prostate, urethra, and male reproductive system. Our experienced urologists utilize modern endoscopic, laser, and minimally invasive surgical techniques to deliver safe, effective treatment with reduced pain, minimal scarring, shorter hospital stays, and faster recovery.",
+  description: "At Indira Hospital – Super Speciality & Multispeciality Hospital, our Urology Department provides comprehensive diagnosis and advanced surgical treatment for conditions affecting the kidneys, ureters, bladder, prostate, urethra, and male reproductive system. Our experienced urologists utilize modern endoscopic, laser, and minimally invasive surgical techniques to deliver safe, effective treatment with reduced pain, minimal scarring, shorter hospital stays, and faster recovery.",
   highlights: [
     "Advanced minimally invasive endoscopic and laser urological procedures",
     "Specialized treatment for Kidney, Ureter, and Bladder Stones (RIRS, PCNL)",
@@ -274,10 +288,193 @@ export const urologyDepartment: Department = {
         "Testicular Torsion Surgery (Detorsion & Orchidopexy)",
         "Genitourinary Trauma Management",
         "Circumcision & Frenuloplasty",
-        "DJ Stent Removal (Local Anaesthesia / Day-care)"
+        "DJ Stent Removal (Day-care / Minor procedure)"
       ]
     }
   ]
 };
+
+export const allHospitalSpecialities: HospitalSpeciality[] = [
+  // --- DAILY OPD SPECIALITIES ---
+  {
+    id: "orthopaedics",
+    name: "Orthopaedics",
+    category: "Super Speciality",
+    opdType: "Daily OPD",
+    opdBadge: "Daily OPD Available",
+    scheduleInfo: "Morning: 10:30 AM – 3:00 PM | Evening: 5:30 PM – 8:30 PM",
+    shortDesc: "Comprehensive surgical and clinical care for joint replacements, spine disorders, sports injuries, and round-the-clock emergency trauma fracture fixation.",
+    iconName: "Bone",
+    procedures: [
+      "Total Knee & Hip Replacement (TKR / THR)",
+      "24/7 Trauma & Complex Fracture Fixation",
+      "Arthroscopic Keyhole Joint Repair (ACL / Meniscus)",
+      "Spine Surgery & Decompression",
+      "Limb Lengthening & Deformity Correction"
+    ],
+    href: "/specialities/orthopaedics",
+    departmentRef: "ortho"
+  },
+  {
+    id: "urology",
+    name: "Urology",
+    category: "Super Speciality",
+    opdType: "Daily OPD",
+    opdBadge: "Daily OPD Available",
+    scheduleInfo: "Monday – Saturday: 10:30 AM – 3:00 PM | Sunday: 10:30 AM – 8:30 PM",
+    shortDesc: "Advanced minimally invasive laser stone treatments (RIRS, PCNL), prostate surgeries, endourology, reconstructive urology, and male reproductive health.",
+    iconName: "Droplets",
+    procedures: [
+      "Laser Kidney Stone Surgery (RIRS / PCNL)",
+      "Prostate Laser Enucleation & TURP",
+      "Endoscopic Urological Surgery",
+      "Stricture Urethroplasty & Pyeloplasty",
+      "Andrology & Renal Transplant Care"
+    ],
+    href: "/specialities/urology",
+    departmentRef: "uro"
+  },
+  {
+    id: "general-medicine",
+    name: "General Medicine",
+    category: "Multispeciality",
+    opdType: "Daily OPD",
+    opdBadge: "Daily OPD Available",
+    scheduleInfo: "Morning: 10:30 AM – 3:00 PM | Evening: 5:30 PM – 8:30 PM",
+    shortDesc: "Primary and internal medicine care for adult illnesses, chronic diseases, diabetes, hypertension, infectious diseases, and pre-operative medical evaluation.",
+    iconName: "Stethoscope",
+    procedures: [
+      "Comprehensive Internal Medicine Consultations",
+      "Diabetes Mellitus & Hypertension Management",
+      "Infectious Fevers & Respiratory Illness Care",
+      "Pre-operative Medical Clearance & Optimization",
+      "Preventive Health Check-ups & Screening"
+    ],
+    departmentRef: "multispeciality"
+  },
+
+  // --- AVAILABLE ON APPOINTMENT BASIS SPECIALITIES ---
+  {
+    id: "nephrology",
+    name: "Nephrology",
+    category: "Super Speciality",
+    opdType: "Appointment Basis",
+    opdBadge: "Available on Appointment Basis",
+    scheduleInfo: "Scheduled on Prior Appointment — Contact Reception",
+    shortDesc: "Specialized clinical diagnosis and management of acute and chronic kidney disease, diabetic nephropathy, electrolyte imbalances, and pre-dialysis evaluation.",
+    iconName: "Activity",
+    procedures: [
+      "Chronic Kidney Disease (CKD) Management",
+      "Diabetic Nephropathy & Renal Care",
+      "Hypertension-Induced Kidney Disease",
+      "Pre-Dialysis Care & Renal Workup",
+      "Proteinuria & Glomerulonephritis Evaluation"
+    ],
+    departmentRef: "multispeciality"
+  },
+  {
+    id: "dermatology",
+    name: "Dermatology",
+    category: "Multispeciality",
+    opdType: "Appointment Basis",
+    opdBadge: "Available on Appointment Basis",
+    scheduleInfo: "Scheduled on Prior Appointment — Contact Reception",
+    shortDesc: "Comprehensive diagnosis and medical management of skin diseases, hair loss, nail infections, eczema, psoriasis, acne, and cutaneous allergies.",
+    iconName: "Sparkles",
+    procedures: [
+      "Clinical Dermatology & Skin Diagnostics",
+      "Acne, Eczema & Psoriasis Management",
+      "Hair Fall & Scalp Condition Treatment",
+      "Fungal, Bacterial & Viral Skin Infections",
+      "Allergic Skin Disease & Dermatitis Care"
+    ],
+    departmentRef: "multispeciality"
+  },
+  {
+    id: "gynaecology",
+    name: "Obstetrics & Gynaecology",
+    category: "Multispeciality",
+    opdType: "Appointment Basis",
+    opdBadge: "Available on Appointment Basis",
+    scheduleInfo: "Scheduled on Prior Appointment — Contact Reception",
+    shortDesc: "Comprehensive healthcare for women across all life stages, maternal wellness, antenatal care, preventive gynaecology, and hormonal disorder management.",
+    iconName: "Heart",
+    procedures: [
+      "Women's Reproductive Health Consultations",
+      "Antenatal & Maternal Well-being Care",
+      "Preventive Gynaecological Health Screening",
+      "Menstrual Irregularities & PCOD Care"
+    ],
+    departmentRef: "multispeciality"
+  },
+  {
+    id: "maxillofacial",
+    name: "Oral & Maxillofacial Surgery",
+    category: "Multispeciality",
+    opdType: "Appointment Basis",
+    opdBadge: "Available on Appointment Basis",
+    scheduleInfo: "Scheduled on Prior Appointment — Contact Reception",
+    shortDesc: "Specialized surgical care for conditions affecting the mouth, jaws, face, facial bone trauma, fractures, and surgical removal of impacted wisdom teeth.",
+    iconName: "ShieldAlert",
+    procedures: [
+      "Facial Trauma & Jaw Fracture Surgery",
+      "Surgical Management of Impacted Teeth",
+      "Maxillofacial Reconstructive Care",
+      "Corrective Jaw Procedures & TMJ Evaluation"
+    ],
+    departmentRef: "multispeciality"
+  },
+  {
+    id: "gastroenterology",
+    name: "Gastroenterology",
+    category: "Super Speciality",
+    opdType: "Appointment Basis",
+    opdBadge: "Available on Appointment Basis",
+    scheduleInfo: "Scheduled on Prior Appointment — Contact Reception",
+    shortDesc: "Consultations for digestive system disorders, chronic acid reflux, peptic ulcers, liver disease, gallstones, and gastrointestinal conditions.",
+    iconName: "Layers",
+    procedures: [
+      "Gastrointestinal & Digestive Evaluation",
+      "Acid Reflux & Peptic Ulcer Disease Care",
+      "Liver, Gallbladder & Pancreatic Consultations",
+      "Irritable Bowel & Chronic Indigestion Care"
+    ],
+    departmentRef: "multispeciality"
+  },
+  {
+    id: "neurosurgery",
+    name: "Neurosurgery",
+    category: "Super Speciality",
+    opdType: "Appointment Basis",
+    opdBadge: "Available on Appointment Basis",
+    scheduleInfo: "Scheduled on Prior Appointment — Contact Reception",
+    shortDesc: "Specialist consultations and surgical evaluation for brain, spine, nerve compression, disc herniations, and neurological surgical conditions.",
+    iconName: "Zap",
+    procedures: [
+      "Brain & Spine Surgical Consultations",
+      "Peripheral Nerve Compression Evaluation",
+      "Spinal Trauma & Disc Disorder Assessment",
+      "Cranial & Neurological Follow-up"
+    ],
+    departmentRef: "multispeciality"
+  },
+  {
+    id: "plastic-surgery",
+    name: "Plastic & Reconstructive Surgery",
+    category: "Super Speciality",
+    opdType: "Appointment Basis",
+    opdBadge: "Available on Appointment Basis",
+    scheduleInfo: "Scheduled on Prior Appointment — Contact Reception",
+    shortDesc: "Specialist consultation for reconstructive surgery following trauma, wound healing, scar revisions, soft-tissue repair, and cosmetic care.",
+    iconName: "Sparkles",
+    procedures: [
+      "Post-Traumatic Soft Tissue Reconstruction",
+      "Complex Wound Healing & Flap Surgeries",
+      "Scar Revision & Contracture Release",
+      "Reconstructive Surgical Consultations"
+    ],
+    departmentRef: "multispeciality"
+  }
+];
 
 export const allDepartments = [orthopaedicDepartment, urologyDepartment];

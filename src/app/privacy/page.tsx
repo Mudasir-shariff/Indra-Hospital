@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
                 Patient Privacy & Medical Data Confidentiality
               </h2>
               <p className="text-sm text-muted mt-2 leading-relaxed">
-                At Indira Hospital — Super Speciality Ortho & Urology Center, Chintamani, Karnataka, we place the highest priority on protecting the privacy, dignity, and confidentiality of our patients. This policy outlines how we collect, handle, and safeguard your medical and personal information.
+                At INDIRA HOSPITAL — Super Speciality & Multispeciality Hospital, Chintamani, Karnataka, we place the highest priority on protecting the privacy, dignity, and confidentiality of our patients. This policy outlines how we collect, handle, and safeguard your medical and personal information.
               </p>
             </div>
 

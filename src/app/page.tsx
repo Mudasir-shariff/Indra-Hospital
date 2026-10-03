@@ -16,8 +16,8 @@ import Footer from "@/components/Footer";
 import { buildMeta, getHospitalJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = buildMeta({
-  title: "Indira Hospital | Superspeciality Orthopaedic Center, Chintamani",
-  description: "Leading 30-bed Super Speciality Orthopaedic & Urology hospital in Chintamani, Karnataka. Advanced modular OTs, digital C-Arms, 24/7 trauma & joint replacement.",
+  title: "INDIRA HOSPITAL | Super Speciality & Multispeciality Hospital, Chintamani",
+  description: "Leading 30-bed Super Speciality & Multispeciality Hospital in Chintamani, Karnataka. Daily OPD for Orthopaedics, Urology, and General Medicine, with advanced modular OTs and appointment-based specialist care.",
   path: "/",
 });
 

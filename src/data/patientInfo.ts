@@ -2,6 +2,7 @@ export interface PatientInfoData {
   opdTimings: {
     department: string;
     timings: string;
+    statusBadge: "Daily OPD Available" | "Available on Appointment Basis" | "24/7 Available";
     details?: string;
   }[];
   visitingHours: {
@@ -22,17 +23,32 @@ export const patientInfoData: PatientInfoData = {
     {
       department: "Orthopaedic OPD",
       timings: "Morning: 10:30 AM – 3:00 PM | Evening: 5:30 PM – 8:30 PM",
-      details: "Available Monday through Saturday. Emergency orthopaedic casualty open 24/7."
+      statusBadge: "Daily OPD Available",
+      details: "Daily OPD available Monday through Saturday. 24/7 emergency fracture and trauma casualty."
     },
     {
       department: "Urology OPD",
       timings: "Monday – Saturday: 10:30 AM – 3:00 PM | Sunday: 10:30 AM – 8:30 PM",
-      details: "Please confirm urology schedule with reception prior to arrival."
+      statusBadge: "Daily OPD Available",
+      details: "Daily OPD available. Laser stone clinic, urinary tract, and prostate consultations."
+    },
+    {
+      department: "General Medicine OPD",
+      timings: "Morning: 10:30 AM – 3:00 PM | Evening: 5:30 PM – 8:30 PM",
+      statusBadge: "Daily OPD Available",
+      details: "Daily OPD available for chronic illness management, diabetes, blood pressure, and primary medical care."
+    },
+    {
+      department: "Nephrology, Dermatology & All Other Specialities",
+      timings: "Consultations Scheduled on Prior Appointment",
+      statusBadge: "Available on Appointment Basis",
+      details: "Specialists in Nephrology, Dermatology, Gynaecology, Maxillofacial Surgery, Gastroenterology, Neurosurgery, and Plastic Surgery are available on appointment basis. Please call reception (+91 79961 14271) to schedule."
     },
     {
       department: "24/7 Emergency & Casualty",
       timings: "24 Hours a Day / 7 Days a Week",
-      details: "Direct phone line: 08154-405616 for immediate trauma response."
+      statusBadge: "24/7 Available",
+      details: "Direct phone line: 08154-405616 for immediate trauma response and acute surgical admissions."
     }
   ],
   visitingHours: [

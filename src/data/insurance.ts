@@ -15,7 +15,7 @@ export interface InsuranceData {
 export const insuranceData: InsuranceData = {
   title: "Insurance & Cashless TPA Services",
   subtitle: "Hassle-Free Medical Financing & Cashless Hospitalization",
-  description: "At Indira Hospital – Super Speciality Ortho & Urology Center, we are committed to making quality healthcare affordable, convenient, and stress-free. We provide assistance for cashless hospitalization and medical reimbursement through empanelled insurance companies and Third-Party Administrators (TPAs), subject to policy terms, eligibility, and prior authorization.",
+  description: "At INDIRA HOSPITAL – Super Speciality & Multispeciality Hospital, we are committed to making quality healthcare affordable, convenient, and stress-free. We provide assistance for cashless hospitalization and medical reimbursement through empanelled insurance companies and Third-Party Administrators (TPAs), subject to policy terms, eligibility, and prior authorization.",
   executive: {
     name: "Mr. Raju Singh",
     role: "Insurance & TPA Executive",

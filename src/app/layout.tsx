@@ -23,14 +23,18 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Indira Hospital — Super Speciality Ortho & Urology Center | Chintamani",
-  description: "Leading 30-bed Super Speciality Orthopaedic & Urology hospital in Chintamani, Karnataka. Advanced modular operation theatres, digital C-Arm imaging, 24/7 emergency trauma care, joint replacement, and laser urology.",
+  title: "INDIRA HOSPITAL — Super Speciality & Multispeciality Hospital | Chintamani",
+  description: "Leading 30-bed Super Speciality & Multispeciality Hospital in Chintamani, Karnataka. Daily OPD in Orthopaedics, Urology, and General Medicine. Advanced modular operation theatres, digital C-Arm imaging, 24/7 emergency trauma care.",
   keywords: [
     "Indira Hospital Chintamani",
+    "Super Speciality Hospital Chintamani",
+    "Multispeciality Hospital Chintamani",
+    "Daily OPD Chintamani",
     "Orthopaedic Hospital Chintamani",
-    "Bone Doctor Chintamani",
-    "Joint Replacement Chintamani",
     "Urology Hospital Karnataka",
+    "General Medicine OPD Chintamani",
+    "Nephrology Chintamani",
+    "Dermatology Chintamani",
     "Kidney Stone Laser Surgery Chintamani",
     "Dr Venkatesh KR",
     "Dr Shashank KA",

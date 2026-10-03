@@ -316,12 +316,20 @@ export default function ContactPage() {
                 </div>
 
                 <div className="pt-4 border-t border-line">
-                  <span className="text-xs font-bold uppercase tracking-wider text-muted block mb-1">
+                  <span className="text-xs font-bold uppercase tracking-wider text-muted block mb-1.5">
                     OPD Consultation Hours
                   </span>
-                  <div className="text-xs text-charcoal font-medium space-y-1">
-                    <div>• <strong>Orthopaedic:</strong> 10:30 AM – 3:00 PM & 5:30 PM – 8:30 PM</div>
-                    <div>• <strong>Urology:</strong> Mon–Sat 10:30 AM – 3:00 PM | Sun 10:30 AM – 8:30 PM</div>
+                  <div className="text-xs text-charcoal font-medium space-y-1.5">
+                    <div className="text-[11px] font-bold text-emerald-700 uppercase">Daily OPD Available:</div>
+                    <div className="pl-1.5 space-y-0.5">
+                      <div>• <strong>Orthopaedics:</strong> 10:30 AM – 3:00 PM & 5:30 PM – 8:30 PM</div>
+                      <div>• <strong>Urology:</strong> Mon–Sat 10:30 AM – 3:00 PM | Sun 10:30 AM – 8:30 PM</div>
+                      <div>• <strong>General Medicine:</strong> 10:30 AM – 3:00 PM & 5:30 PM – 8:30 PM</div>
+                    </div>
+                    <div className="text-[11px] font-bold text-[#0068B0] uppercase pt-1">Available on Appointment Basis:</div>
+                    <div className="pl-1.5 text-muted text-[11px]">
+                      Nephrology, Dermatology, Gynaecology, Maxillofacial, Gastroenterology, Neurosurgery & Plastic Surgery
+                    </div>
                   </div>
                 </div>
 

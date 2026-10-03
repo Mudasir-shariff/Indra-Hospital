@@ -21,7 +21,7 @@ export default function DoctorsSection() {
               Experienced Specialists Dedicated to Your Health
             </h2>
             <p className="text-muted text-sm sm:text-base mt-2">
-              Our multidisciplinary team of senior consultants, surgeons, and anaesthetists work seamlessly to achieve superior clinical outcomes.
+              Our multidisciplinary team of senior consultants, surgeons, and healthcare specialists work seamlessly to achieve superior clinical outcomes.
             </p>
           </div>
 
@@ -91,7 +91,7 @@ export default function DoctorsSection() {
           <div className="bg-gradient-to-br from-[#0A2F4A] to-[#0068B0] rounded-2xl p-6 sm:p-7 text-white flex flex-col justify-between shadow-soft">
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold uppercase tracking-wider mb-4">
-                <Calendar className="w-3.5 h-3.5 text-[#9BE8D2]" /> Scheduled OPD Days
+                <Calendar className="w-3.5 h-3.5 text-[#9BE8D2]" /> Available on Appointment Basis
               </div>
               <h3 className="text-xl font-bold font-heading mb-2">
                 Visiting Specialist Faculty

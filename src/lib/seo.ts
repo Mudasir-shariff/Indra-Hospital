@@ -51,7 +51,7 @@ export function buildMeta({
       title: fullTitle,
       description: description.slice(0, 160),
       url: canonicalUrl,
-      siteName: "Indira Hospital — Super Speciality Ortho & Urology Center",
+      siteName: "INDIRA HOSPITAL — Super Speciality & Multispeciality Hospital",
       locale: "en_IN",
       type: "website",
       images: [
@@ -83,13 +83,14 @@ export function getHospitalJsonLd() {
     "@id": `${SITE_URL}/#hospital`,
     name: "Indira Hospital",
     alternateName: [
+      "INDIRA HOSPITAL",
       "Indira Hospital Chintamani",
-      "Indira Super Speciality Ortho & Urology Center",
-      "Indira Orthopaedic Hospital"
+      "INDIRA HOSPITAL — Super Speciality & Multispeciality Hospital",
+      "Indira Super Speciality & Multispeciality Hospital"
     ],
     url: SITE_URL,
     logo: `${SITE_URL}/brand/indira-logo.jpg`,
-    image: `${SITE_URL}/images/hero-family.jpg`,
+    image: `${SITE_URL}/images/indira-hospital-building.jpg`,
     description: siteData.shortDescription,
     telephone: siteData.contact.phone,
     emergencyTelephone: siteData.contact.emergency,
@@ -170,6 +171,9 @@ export function getHospitalJsonLd() {
     medicalSpecialty: [
       "https://schema.org/Orthopedic",
       "https://schema.org/Urologic",
+      "https://schema.org/PrimaryCare",
+      "https://schema.org/Renal",
+      "https://schema.org/Dermatologic",
       "https://schema.org/Obstetric",
       "https://schema.org/Gynecologic"
     ],

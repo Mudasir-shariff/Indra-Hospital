@@ -12,13 +12,12 @@ import { buildMeta, getDoctorListJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata = buildMeta({
   title: "Our Doctors & Specialists | Indira Hospital, Chintamani",
-  description: "Meet our specialist doctors in Chintamani: expert orthopaedic surgeons, urologists, gynaecologists, maxillofacial surgeons & anaesthetists.",
+  description: "Meet our specialist doctors in Chintamani: expert orthopaedic surgeons, urologists, gynaecologists, and maxillofacial surgeons.",
   path: "/doctors",
 });
 
 export default function DoctorsPage() {
-  const consultants = doctorsData.filter((d) => d.department !== "Anaesthesiology" && d.department !== "Anaesthesiology & Critical Care");
-  const anaesthetists = doctorsData.filter((d) => d.department.includes("Anaesthesiology"));
+  const consultants = doctorsData;
 
   const doctorListJsonLd = getDoctorListJsonLd();
   const breadcrumbJsonLd = getBreadcrumbJsonLd([
@@ -116,51 +115,17 @@ export default function DoctorsPage() {
             </div>
           </div>
 
-          {/* Anaesthesiology Team */}
-          <div className="border-t border-line pt-16">
-            <div className="mb-8">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0068B0]">
-                Critical Care & Surgical Safety
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-charcoal mt-1">
-                Department of Anaesthesiology
-              </h2>
-              <p className="text-xs sm:text-sm text-muted mt-1 max-w-2xl font-light">
-                Our anaesthetists ensure painless surgical experiences, patient hemodynamic stability, and vigilant perioperative monitoring inside our modular theatres.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {anaesthetists.map((ana) => (
-                <div key={ana.slug} className="bg-white rounded-2xl p-6 border border-line shadow-soft">
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0068B0] flex items-center justify-center font-heading font-bold text-lg mb-4">
-                    {ana.name.split(" ")[1]?.[0] || ana.name[0]}
-                  </div>
-                  <h3 className="text-lg font-bold font-heading text-charcoal mb-0.5">
-                    {ana.name}
-                  </h3>
-                  <div className="text-xs text-[#0068B0] font-semibold mb-3">
-                    {ana.title}
-                  </div>
-                  <p className="text-xs text-muted leading-relaxed font-light">
-                    {ana.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Visiting Specialists Section */}
           <div className="border-t border-line pt-16">
             <div className="mb-8">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0068B0]">
-                Specialized Care Closer to Home
-              </span>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-xs font-semibold text-[#0068B0] uppercase tracking-wider mb-2">
+                <Calendar className="w-3.5 h-3.5" /> Available on Appointment Basis
+              </div>
               <h2 className="text-2xl sm:text-3xl font-bold font-heading text-charcoal mt-1">
                 Visiting Specialist Consultants
               </h2>
               <p className="text-xs sm:text-sm text-muted mt-1 max-w-2xl font-light">
-                Patients in Chintamani benefit from scheduled specialist consultations without having to travel to major metropolitan cities.
+                Patients in Chintamani benefit from specialized consultations in Nephrology, Dermatology, Gastroenterology, Neurosurgery, and Plastic Surgery without travelling to distant metropolitan centers.
               </p>
             </div>
 
@@ -168,9 +133,15 @@ export default function DoctorsPage() {
               {visitingSpecialists.map((vis) => (
                 <div key={vis.speciality} className="bg-white rounded-2xl p-6 sm:p-7 border border-line shadow-soft flex flex-col justify-between">
                   <div>
-                    <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0068B0] flex items-center justify-center mb-4">
-                      <Stethoscope className="w-5 h-5" />
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0068B0] flex items-center justify-center">
+                        <Stethoscope className="w-5 h-5" />
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded">
+                        Appointment Basis
+                      </span>
                     </div>
+
                     <h3 className="text-lg font-bold font-heading text-charcoal mb-2">
                       {vis.speciality}
                     </h3>
@@ -187,7 +158,7 @@ export default function DoctorsPage() {
                       href={`tel:${siteData.contact.phone}`}
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-charcoal hover:text-[#0068B0]"
                     >
-                      <Phone className="w-3.5 h-3.5 text-[#0068B0]" /> Check OPD Timings: {siteData.contact.phone}
+                      <Phone className="w-3.5 h-3.5 text-[#0068B0]" /> Book Consultation: {siteData.contact.phone}
                     </a>
                   </div>
                 </div>

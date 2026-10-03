@@ -67,7 +67,20 @@ export default function PatientInfoPage() {
               <div className="space-y-4 divide-y divide-line">
                 {patientInfoData.opdTimings.map((opd) => (
                   <div key={opd.department} className="pt-3 first:pt-0">
-                    <div className="text-sm font-bold text-charcoal">{opd.department}</div>
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="text-sm font-bold text-charcoal">{opd.department}</div>
+                      {opd.statusBadge && (
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                          opd.statusBadge === "Daily OPD Available" 
+                            ? "bg-emerald-50 text-emerald-800 border border-emerald-200" 
+                            : opd.statusBadge === "24/7 Available"
+                            ? "bg-red-50 text-[#C03A21] border border-red-200"
+                            : "bg-blue-50 text-blue-800 border border-blue-200"
+                        }`}>
+                          {opd.statusBadge}
+                        </span>
+                      )}
+                    </div>
                     <div className="text-xs font-semibold text-[#0068B0] mt-0.5">{opd.timings}</div>
                     {opd.details && (
                       <div className="text-xs text-muted mt-1 font-light">{opd.details}</div>

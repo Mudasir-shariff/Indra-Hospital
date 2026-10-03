@@ -8,23 +8,24 @@ export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   {
-    label: "Orthopaedics",
-    href: "/specialities/orthopaedics",
+    label: "Daily OPD",
+    href: "/#specialities",
     children: [
-      { label: "Overview — Orthopaedics", href: "/specialities/orthopaedics", desc: "Comprehensive bone & joint surgery" },
-      { label: "Joint Replacement (TKR & THR)", href: "/specialities/joint-replacement", desc: "Advanced knee & hip replacements" },
-      { label: "Trauma & Fracture Surgery", href: "/specialities/trauma-fracture", desc: "Complex 24/7 fracture fixation" },
-      { label: "Arthroscopy (Keyhole)", href: "/specialities/arthroscopy", desc: "Minimally invasive ligament repair" },
-      { label: "Spine Surgery", href: "/specialities/spine-surgery", desc: "Disc & spinal stabilization" }
+      { label: "Orthopaedics (Daily OPD)", href: "/specialities/orthopaedics", desc: "Bone, joint & trauma care" },
+      { label: "Urology (Daily OPD)", href: "/specialities/urology", desc: "Laser stone & prostate surgery" },
+      { label: "General Medicine (Daily OPD)", href: "/#specialities", desc: "Primary care, diabetes & hypertension" }
     ]
   },
   {
-    label: "Urology",
-    href: "/specialities/urology",
+    label: "Specialities",
+    href: "/#specialities",
     children: [
-      { label: "Overview — Urology", href: "/specialities/urology", desc: "Advanced urology & renal services" },
-      { label: "Kidney Stone Surgery (RIRS / PCNL)", href: "/specialities/kidney-stones", desc: "Laser stone removal" },
-      { label: "Prostate Surgery (TURP / Laser)", href: "/specialities/prostate-surgery", desc: "Advanced prostate management" }
+      { label: "All Specialities & OPD", href: "/#specialities", desc: "Daily OPD & appointment clinics" },
+      { label: "Orthopaedic Surgeries", href: "/specialities/orthopaedics", desc: "Joints, fractures & spine" },
+      { label: "Urology Surgeries", href: "/specialities/urology", desc: "Laser stones & endourology" },
+      { label: "Nephrology (Appointment)", href: "/#specialities", desc: "Renal care & CKD management" },
+      { label: "Dermatology (Appointment)", href: "/#specialities", desc: "Skin, hair & allergy clinics" },
+      { label: "Visiting Specialists", href: "/doctors", desc: "Gastro, Neuro, Plastic, OMFS & Gynaec" }
     ]
   },
   { label: "Specialists", href: "/doctors" },

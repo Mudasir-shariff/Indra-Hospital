@@ -9,7 +9,7 @@ export const facilitiesData: FacilityCategory[] = [
     title: "Hospital Infrastructure",
     description: "Modern healthcare environment planned for maximum clinical safety and patient comfort.",
     items: [
-      "30-Bed Super Speciality Hospital with modern patient care amenities",
+      "30-Bed Super Speciality & Multispeciality Hospital with modern patient care amenities",
       "Central Oxygen & Vacuum Suction System available across all patient care zones",
       "Four dedicated spacious Outpatient (OPD) & Inpatient (IPD) facilities",
       "Well-equipped General Wards and comfortable Private Patient Rooms",

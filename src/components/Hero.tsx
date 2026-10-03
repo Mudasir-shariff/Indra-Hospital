@@ -15,14 +15,14 @@ export default function Hero() {
       {/* Outer Hero Card with rounded corners matching MedixWeb reference */}
       <div className="relative w-full min-h-[640px] md:min-h-[720px] lg:min-h-[820px] rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-2xl flex flex-col justify-between">
         
-        {/* Background Image: High-res authentic father & son in natural sunlight */}
+        {/* Background Image: Official Indira Hospital Building */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-family.jpg"
-            alt="Happy family outdoors representing health and mobility restored at Indira Hospital"
+            src="/images/indira-hospital-building.jpg"
+            alt="INDIRA HOSPITAL — Super Speciality & Multispeciality Hospital Building, Chintamani"
             fill
             priority
-            className="object-cover object-[center_28%] lg:object-[68%_25%]"
+            className="object-cover object-[center_35%] lg:object-[center_28%]"
           />
         </div>
 

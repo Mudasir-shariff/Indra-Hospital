@@ -39,7 +39,7 @@ export default function TermsPage() {
                 Website Terms and Conditions
               </h2>
               <p className="text-sm text-muted mt-2 leading-relaxed font-light">
-                Welcome to the official website of Indira Hospital — Super Speciality Ortho & Urology Center. By accessing or using this website, you agree to comply with and be bound by the following terms and conditions.
+                Welcome to the official website of INDIRA HOSPITAL — Super Speciality & Multispeciality Hospital. By accessing or using this website, you agree to comply with and be bound by the following terms and conditions.
               </p>
             </div>
 

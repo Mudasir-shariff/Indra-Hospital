@@ -62,7 +62,7 @@ export default function AppointmentModal({
             Book an Appointment
           </h3>
           <p className="text-xs sm:text-sm text-muted mt-1 font-light">
-            Indira Hospital — Super Speciality Ortho & Urology Center, Chintamani
+            Indira Hospital — Super Speciality & Multispeciality Hospital, Chintamani
           </p>
 
           {/* Navigation Tabs */}
@@ -164,11 +164,20 @@ export default function AppointmentModal({
                     onChange={(e) => setFormData({ ...formData, department: e.target.value })}
                     className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-line focus:outline-none focus:ring-2 focus:ring-[#0068B0] focus:border-transparent text-sm bg-[#FAFAF8]"
                   >
-                    <option value="Orthopaedics">Orthopaedics & Joint Replacement</option>
-                    <option value="Trauma & Fracture">24/7 Trauma & Fracture Care</option>
-                    <option value="Urology">Urology & Laser Stone Clinic</option>
-                    <option value="Spine Surgery">Spine Surgery</option>
-                    <option value="Arthroscopy">Keyhole Arthroscopy</option>
+                    <optgroup label="Daily OPD Available">
+                      <option value="Orthopaedics">Orthopaedics (Daily OPD)</option>
+                      <option value="Urology">Urology (Daily OPD)</option>
+                      <option value="General Medicine">General Medicine (Daily OPD)</option>
+                    </optgroup>
+                    <optgroup label="Available on Appointment Basis">
+                      <option value="Nephrology">Nephrology (Appointment Basis)</option>
+                      <option value="Dermatology">Dermatology (Appointment Basis)</option>
+                      <option value="Obstetrics & Gynaecology">Obstetrics & Gynaecology (Appointment Basis)</option>
+                      <option value="Oral & Maxillofacial Surgery">Oral & Maxillofacial Surgery (Appointment Basis)</option>
+                      <option value="Gastroenterology">Gastroenterology (Appointment Basis)</option>
+                      <option value="Neurosurgery">Neurosurgery (Appointment Basis)</option>
+                      <option value="Plastic Surgery">Plastic & Reconstructive Surgery (Appointment Basis)</option>
+                    </optgroup>
                   </select>
                 </div>
               </div>
@@ -183,10 +192,12 @@ export default function AppointmentModal({
                   className="w-full px-4 py-2.5 rounded-xl border border-line focus:outline-none focus:ring-2 focus:ring-[#0068B0] focus:border-transparent text-sm bg-[#FAFAF8]"
                 >
                   <option value="Any Available Specialist">Any Available Specialist</option>
-                  <option value="Dr. Venkatesh K.R.">Dr. Venkatesh K.R. (Orthopaedics)</option>
-                  <option value="Dr. Shashank K.A.">Dr. Shashank K.A. (Urology)</option>
-                  <option value="Dr. Sowmya V.">Dr. Sowmya V. (Gynaecology)</option>
-                  <option value="Dr. Adarsh G.">Dr. Adarsh G. (Maxillofacial)</option>
+                  <option value="Dr. Venkatesh K. R.">Dr. Venkatesh K. R. (Director & Chief Orthopaedic Surgeon)</option>
+                  <option value="Dr. Shashank K. A.">Dr. Shashank K. A. (Consultant Urologist & Andrologist)</option>
+                  <option value="Dr. Prabhu">Dr. Prabhu (Consultant Orthopaedic Surgeon - Deformity & Limb)</option>
+                  <option value="Dr. Bindu V.">Dr. Bindu V. (Consultant Obstetrician & Gynaecologist)</option>
+                  <option value="Dr. Akarsh">Dr. Akarsh (Consultant Maxillofacial Surgeon - OMFS)</option>
+                  <option value="Visiting Specialist Consultant">Visiting Specialist Consultant</option>
                 </select>
               </div>
             </div>

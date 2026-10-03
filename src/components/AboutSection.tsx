@@ -22,7 +22,7 @@ export default function AboutSection() {
                 </h3>
 
                 <p className="text-white/85 text-sm sm:text-base leading-relaxed mb-6 font-light">
-                  From our humble beginnings as an ethical outpatient clinic to becoming a 30-bed premier Super Speciality Orthopaedics & Urology surgical centre, our mission has remained unchanged: clinical precision and compassionate care.
+                  From our humble beginnings as an ethical outpatient clinic to becoming a 30-bed premier Super Speciality & Multispeciality Hospital, our mission has remained unchanged: clinical precision and compassionate care.
                 </p>
 
                 <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/20">
@@ -36,7 +36,7 @@ export default function AboutSection() {
                   </div>
                   <div>
                     <div className="text-2xl sm:text-3xl font-bold font-heading text-[#C2EFF8]">2026</div>
-                    <div className="text-xs text-white/70 mt-1">Urology Wing</div>
+                    <div className="text-xs text-white/70 mt-1">Multispeciality</div>
                   </div>
                 </div>
               </div>
@@ -80,10 +80,10 @@ export default function AboutSection() {
                 Established in 1998 as a small clinic, Indira Hospital, Chintamani has grown steadily over the years into a trusted healthcare institution, serving the community with dedication, compassion, and integrity.
               </p>
               <p>
-                Driven by a vision to deliver advanced speciality care closer to home, Indira Hospital underwent a major transformation in 2025, evolving into a modern Super Speciality Healthcare Facility equipped with two advanced modular operation theatres, digital C-Arm imaging, and comprehensive fracture care.
+                Driven by a vision to deliver advanced speciality care closer to home, Indira Hospital underwent a major transformation, evolving into a modern Super Speciality & Multispeciality Hospital equipped with two advanced modular operation theatres, digital C-Arm imaging, and 24/7 trauma services.
               </p>
               <p>
-                In 2026, we launched a dedicated Urology Department, expanding our specialized surgical capabilities under one roof. Today, we proudly offer evidence-based diagnostics, laser stone surgeries, and reconstructive joint procedures designed around each patient’s unique needs.
+                Today, we offer dedicated Daily OPD services for Orthopaedics, Urology, and General Medicine, alongside appointment-based specialist consultations in Nephrology, Dermatology, Gynaecology, Maxillofacial Surgery, Gastroenterology, Neurosurgery, and Plastic Surgery.
               </p>
             </div>
 

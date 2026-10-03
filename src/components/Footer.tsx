@@ -27,19 +27,19 @@ export default function Footer() {
                   <span className="text-[#C03A21]">INDIRA</span>{" "}
                   <span className="text-[#0068B0]">HOSPITAL</span>
                 </span>
-                <span className="text-[10px] tracking-wider uppercase text-muted font-medium mt-1">
-                  Super Speciality Ortho & Urology
+                <span className="text-[9.5px] tracking-wider uppercase text-muted font-bold mt-1">
+                  SUPER SPECIALITY & MULTISPECIALITY HOSPITAL
                 </span>
               </div>
             </Link>
 
             <p className="text-xs sm:text-sm text-muted leading-relaxed font-light">
-              Premier 30-bed superspeciality hospital in Chintamani, Karnataka. Providing advanced surgical care in joint replacement, complex fracture trauma, and minimally invasive laser urology since 1998.
+              Premier 30-bed super speciality & multispeciality hospital in Chintamani, Karnataka. Offering daily OPD in Orthopaedics, Urology, and General Medicine, alongside appointment-based specialist consultations in Nephrology, Dermatology, and surgical care.
             </p>
 
             <div className="pt-2 text-xs text-muted space-y-1">
               <p>• <strong>Emergency 24/7:</strong> {siteData.contact.emergency}</p>
-              <p>• <strong>Reception:</strong> {siteData.contact.phone}</p>
+              <p>• <strong>Reception Desk:</strong> {siteData.contact.phone}</p>
             </div>
 
             {/* Official Social Links */}
@@ -85,19 +85,22 @@ export default function Footer() {
                 <Link href="/about" className="hover:text-[#0068B0] transition-colors">About Indira Hospital</Link>
               </li>
               <li>
-                <Link href="/doctors" className="hover:text-[#0068B0] transition-colors">Our Doctors & Surgeons</Link>
+                <Link href="/#specialities" className="hover:text-[#0068B0] transition-colors">Specialities & Daily OPD</Link>
               </li>
               <li>
-                <Link href="/facilities" className="hover:text-[#0068B0] transition-colors">Modular OTs & Infrastructure</Link>
+                <Link href="/doctors" className="hover:text-[#0068B0] transition-colors">Our Doctors & Specialists</Link>
               </li>
               <li>
-                <Link href="/patient-info" className="hover:text-[#0068B0] transition-colors">Patient Information & OPD</Link>
+                <Link href="/facilities" className="hover:text-[#0068B0] transition-colors">Modular OTs & Facilities</Link>
               </li>
               <li>
-                <Link href="/insurance" className="hover:text-[#0068B0] transition-colors">Insurance & Cashless TPA</Link>
+                <Link href="/patient-info" className="hover:text-[#0068B0] transition-colors">Patient Information & Timings</Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[#0068B0] transition-colors">Contact & Location</Link>
+                <Link href="/insurance" className="hover:text-[#0068B0] transition-colors">Cashless Insurance & TPA</Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-[#0068B0] transition-colors">Contact & Directions</Link>
               </li>
             </ul>
           </div>
@@ -105,104 +108,87 @@ export default function Footer() {
           {/* Col 3: Specialities */}
           <div className="lg:col-span-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-charcoal mb-4">
-              Surgical Specialities
+              Hospital Specialities
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-muted">
               <li>
-                <Link href="/specialities/orthopaedics" className="hover:text-[#0068B0] transition-colors">
-                  Orthopaedic Surgeries Overview
+                <Link href="/specialities/orthopaedics" className="hover:text-[#0068B0] transition-colors flex items-center justify-between">
+                  <span>Orthopaedics</span>
+                  <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">Daily OPD</span>
                 </Link>
               </li>
               <li>
-                <Link href="/specialities/joint-replacement" className="hover:text-[#0068B0] transition-colors">
-                  Joint Replacement (TKR & THR)
+                <Link href="/specialities/urology" className="hover:text-[#0068B0] transition-colors flex items-center justify-between">
+                  <span>Urology</span>
+                  <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">Daily OPD</span>
                 </Link>
               </li>
               <li>
-                <Link href="/specialities/trauma-fracture" className="hover:text-[#0068B0] transition-colors">
-                  Trauma & Fracture Surgery
+                <Link href="/#specialities" className="hover:text-[#0068B0] transition-colors flex items-center justify-between">
+                  <span>General Medicine</span>
+                  <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">Daily OPD</span>
                 </Link>
               </li>
               <li>
-                <Link href="/specialities/arthroscopy" className="hover:text-[#0068B0] transition-colors">
-                  Arthroscopy (Keyhole Joint Repair)
+                <Link href="/#specialities" className="hover:text-[#0068B0] transition-colors flex items-center justify-between">
+                  <span>Nephrology</span>
+                  <span className="text-[10px] font-medium text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded">Appointment</span>
                 </Link>
               </li>
               <li>
-                <Link href="/specialities/spine-surgery" className="hover:text-[#0068B0] transition-colors">
-                  Spine Surgery & Decompression
+                <Link href="/#specialities" className="hover:text-[#0068B0] transition-colors flex items-center justify-between">
+                  <span>Dermatology</span>
+                  <span className="text-[10px] font-medium text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded">Appointment</span>
                 </Link>
               </li>
               <li>
-                <Link href="/specialities/urology" className="hover:text-[#0068B0] transition-colors">
-                  Urology Surgeries Overview
+                <Link href="/#specialities" className="hover:text-[#0068B0] transition-colors flex items-center justify-between">
+                  <span>Obstetrics & Gynaecology</span>
+                  <span className="text-[10px] font-medium text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded">Appointment</span>
                 </Link>
               </li>
               <li>
-                <Link href="/specialities/kidney-stones" className="hover:text-[#0068B0] transition-colors">
-                  Kidney Stone Laser Clinic (RIRS/PCNL)
-                </Link>
-              </li>
-              <li>
-                <Link href="/specialities/prostate-surgery" className="hover:text-[#0068B0] transition-colors">
-                  Prostate Surgery (TURP & Laser)
+                <Link href="/#specialities" className="hover:text-[#0068B0] transition-colors flex items-center justify-between">
+                  <span>Oral & Maxillofacial Surgery</span>
+                  <span className="text-[10px] font-medium text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded">Appointment</span>
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: Visit Us */}
+          {/* Col 4: Visit Us & OPD Hours */}
           <div className="lg:col-span-2 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-charcoal mb-4">
-              Visit Us
+              OPD & Location
             </h4>
-            <p className="text-xs text-muted leading-relaxed font-light">
-              Near Park, N.R. Extension,<br />
-              Ram Mandir Road,<br />
-              Chintamani – 563125,<br />
-              Karnataka, India
-            </p>
-            <div className="pt-2">
-              <span className="inline-block px-2.5 py-1 rounded bg-blue-50 text-[#0068B0] text-[11px] font-semibold">
-                OPD: 10:30 AM – 3:00 PM
+            <div className="p-3 bg-[#FAFAF8] rounded-xl border border-line text-xs space-y-1.5">
+              <span className="text-[10px] font-bold uppercase text-[#0068B0] block">Daily OPD Available:</span>
+              <p className="font-semibold text-charcoal">• Orthopaedics</p>
+              <p className="font-semibold text-charcoal">• Urology</p>
+              <p className="font-semibold text-charcoal">• General Medicine</p>
+              <span className="text-[10px] font-semibold text-muted block pt-1 border-t border-line/60">
+                All remaining specialities: <em>Available on Appointment Basis</em>
               </span>
             </div>
+            <p className="text-xs text-muted leading-relaxed font-light pt-1">
+              Near Park, N.R. Extension,<br />
+              Ram Mandir Road,<br />
+              Chintamani – 563125
+            </p>
           </div>
 
         </div>
 
         {/* Bottom Sub-bar */}
         <div className="mt-12 pt-6 border-t border-line flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted">
-          <p>© {new Date().getFullYear()} Indira Hospital. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} INDIRA HOSPITAL — Super Speciality & Multispeciality Hospital. All rights reserved.</p>
           
-          <div className="flex items-center gap-1.5 text-xs text-muted">
-            <span>Made by</span>
-            <a
-              href="https://opti-x.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-charcoal hover:text-[#0068B0] underline underline-offset-4 decoration-[#0068B0]/40 transition-colors"
-            >
-              Mudasir Shariff (opti-x.in)
-            </a>
-          </div>
-
-          <div className="flex items-center flex-wrap justify-center gap-5 sm:gap-6">
-            <Link href="/privacy" className="hover:text-charcoal transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-charcoal transition-colors">
-              Terms of Use
-            </Link>
-            <Link href="/patient-info" className="hover:text-charcoal transition-colors">
-              Patient Rights
-            </Link>
-            <Link href="/contact" className="hover:text-charcoal transition-colors">
-              Emergency Directions
-            </Link>
+          <div className="flex items-center gap-4 text-xs text-muted">
+            <Link href="/privacy" className="hover:text-[#0068B0] transition-colors">Privacy Policy</Link>
+            <span>•</span>
+            <Link href="/terms" className="hover:text-[#0068B0] transition-colors">Terms of Service</Link>
           </div>
         </div>
-
       </div>
     </footer>
   );

@@ -32,7 +32,7 @@ export const patientJourneySteps: JourneyStep[] = [
     step: "04",
     title: "Treatment & Advanced Surgery",
     subtitle: "Precision Care in Modular OTs",
-    description: "Surgical execution inside our high-sterility modular theatres utilizing digital C-Arm guidance, laser instruments, and monitored anaesthesia.",
+    description: "Surgical execution inside our high-sterility modular theatres utilizing digital C-Arm guidance, laser instruments, and continuous patient monitoring.",
     actionPoint: "Continuous vital monitoring & 24/7 nursing"
   },
   {

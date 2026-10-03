@@ -88,13 +88,27 @@ export default function ContactSection() {
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-muted block mb-1">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-muted block mb-1.5">
                     OPD Consultation Hours
                   </span>
-                  <div className="space-y-1 text-xs sm:text-sm text-charcoal font-medium">
-                    <div>• <strong>Orthopaedic OPD:</strong> 10:30 AM – 3:00 PM & 5:30 PM – 8:30 PM</div>
-                    <div>• <strong>Urology OPD:</strong> Mon–Sat 10:30 AM – 3:00 PM | Sun 10:30 AM – 8:30 PM</div>
-                    <div>• <strong>Emergency:</strong> Open 24 Hours / 7 Days</div>
+                  <div className="space-y-1.5 text-xs sm:text-sm text-charcoal font-medium">
+                    <div className="text-[11px] font-bold text-emerald-700 uppercase tracking-wide">
+                      • Daily OPD Available:
+                    </div>
+                    <div className="pl-2 space-y-0.5 text-xs text-charcoal">
+                      <div><strong>Orthopaedics:</strong> 10:30 AM – 3:00 PM & 5:30 PM – 8:30 PM</div>
+                      <div><strong>Urology:</strong> Mon–Sat 10:30 AM – 3:00 PM | Sun 10:30 AM – 8:30 PM</div>
+                      <div><strong>General Medicine:</strong> 10:30 AM – 3:00 PM & 5:30 PM – 8:30 PM</div>
+                    </div>
+                    <div className="text-[11px] font-bold text-[#0068B0] uppercase tracking-wide pt-1">
+                      • Available on Appointment Basis:
+                    </div>
+                    <div className="pl-2 text-xs text-muted">
+                      Nephrology, Dermatology, Gynaecology, Maxillofacial, Gastroenterology, Neurosurgery & Plastic Surgery
+                    </div>
+                    <div className="pt-1 text-xs font-semibold text-[#C03A21]">
+                      • <strong>24/7 Casualty & Trauma:</strong> Always Open
+                    </div>
                   </div>
                 </div>
               </div>

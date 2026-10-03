@@ -14,6 +14,7 @@ export interface VisitingSpecialist {
   speciality: string;
   scope: string;
   schedule: string;
+  availability: "Available on Appointment Basis";
 }
 
 export const doctorsData: Doctor[] = [
@@ -84,55 +85,38 @@ export const doctorsData: Doctor[] = [
       "Surgical Management of Impacted Teeth",
       "Corrective Jaw Procedures"
     ]
-  },
-  {
-    slug: "dr-mahendra",
-    name: "Dr. Mahendra",
-    title: "Consultant Anaesthetist",
-    department: "Anaesthesiology & Critical Care",
-    description: "Dr. Mahendra provides comprehensive anaesthesia care with a focus on patient safety, comfort, and effective perioperative management.",
-    specialization: ["Perioperative Anaesthesia", "Pain Management", "Patient Monitoring"]
-  },
-  {
-    slug: "dr-sridhar",
-    name: "Dr. Sridhar",
-    title: "Consultant Anaesthetist",
-    department: "Anaesthesiology & Critical Care",
-    description: "Dr. Sridhar provides specialized anaesthesia services for surgical procedures, with emphasis on patient safety, monitoring, and perioperative care.",
-    specialization: ["Advanced Surgical Anaesthesia", "Safety Protocols", "Post-operative Care"]
-  },
-  {
-    slug: "dr-sumanth",
-    name: "Dr. Sumanth",
-    title: "Anaesthetist",
-    department: "Anaesthesiology",
-    description: "Dr. Sumanth provides professional anaesthesia care, ensuring safe and comfortable surgical experiences for patients.",
-    specialization: ["Surgical Support", "Patient Safety", "Clinical Care"]
-  },
-  {
-    slug: "dr-manasa",
-    name: "Dr. Manasa",
-    title: "Anaesthetist",
-    department: "Anaesthesiology",
-    description: "Dr. Manasa provides comprehensive anaesthesia services with a focus on patient safety and individualized care.",
-    specialization: ["Anaesthesia Care", "Perioperative Safety", "Patient Comfort"]
   }
 ];
 
 export const visitingSpecialists: VisitingSpecialist[] = [
   {
+    speciality: "Nephrologist",
+    scope: "Specialized clinical consultation for kidney diseases, chronic kidney disease (CKD), hypertension, and renal care.",
+    schedule: "Available on Appointment Basis — Please contact reception to book",
+    availability: "Available on Appointment Basis"
+  },
+  {
+    speciality: "Dermatologist",
+    scope: "Specialized clinical consultation for skin, hair, and nail disorders, acne, allergies, eczema, and dermatological conditions.",
+    schedule: "Available on Appointment Basis — Please contact reception to book",
+    availability: "Available on Appointment Basis"
+  },
+  {
     speciality: "Gastroenterologist",
-    scope: "Consultation for digestive system and gastrointestinal disorders.",
-    schedule: "Scheduled OPD days — please contact reception for timings"
+    scope: "Specialized consultation for digestive system, liver, acidity, and gastrointestinal conditions.",
+    schedule: "Available on Appointment Basis — Please contact reception to book",
+    availability: "Available on Appointment Basis"
   },
   {
     speciality: "Neurosurgeon",
-    scope: "Consultation for brain, spine, nerve, and related neurological surgical conditions.",
-    schedule: "Scheduled OPD days — please contact reception for timings"
+    scope: "Specialized consultation for brain, spine, nerve compression, and neurological surgical conditions.",
+    schedule: "Available on Appointment Basis — Please contact reception to book",
+    availability: "Available on Appointment Basis"
   },
   {
     speciality: "Plastic & Reconstructive Surgeon",
-    scope: "Consultation for reconstructive, cosmetic, and plastic surgical conditions.",
-    schedule: "Scheduled OPD days — please contact reception for timings"
+    scope: "Specialized consultation for reconstructive, post-traumatic, cosmetic, and plastic surgical care.",
+    schedule: "Available on Appointment Basis — Please contact reception to book",
+    availability: "Available on Appointment Basis"
   }
 ];

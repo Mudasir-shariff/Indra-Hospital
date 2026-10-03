@@ -13,8 +13,10 @@ export interface ContactInfo {
   bookingQrImage: string;
   opdHours: {
     department: string;
-    morning: string;
-    evening: string;
+    morning?: string;
+    evening?: string;
+    timings?: string;
+    status: "Daily OPD Available" | "Available on Appointment Basis" | "24/7 Available";
     notes?: string;
   }[];
 }
@@ -40,7 +42,7 @@ export interface SiteData {
 
 export const siteData: SiteData = {
   name: "Indira Hospital",
-  descriptor: "Super Speciality Ortho & Urology Center",
+  descriptor: "SUPER SPECIALITY & MULTISPECIALITY HOSPITAL",
   tagline: "Compassionate Care. Advanced Healing. Trusted Healthcare.",
   established: "1998",
   milestones: [
@@ -56,15 +58,15 @@ export const siteData: SiteData = {
     },
     {
       year: "2026",
-      title: "Dedicated Urology Department",
-      description: "Expanded specialized services with the launch of a comprehensive Urology department complementing well-established Orthopaedics."
+      title: "Multispeciality Expansion",
+      description: "Expanded into a full-fledged Super Speciality & Multispeciality Hospital with dedicated Urology, General Medicine daily OPD, and specialized Nephrology & Dermatology care."
     }
   ],
-  shortDescription: "Indira Hospital is a premier Super Speciality Orthopaedics & Urology Center in Chintamani, Karnataka, equipped with advanced modular operation theatres, modern imaging, and experienced surgeons dedicated to restoring mobility and health.",
+  shortDescription: "Indira Hospital is a premier Super Speciality & Multispeciality Hospital in Chintamani, Karnataka, offering daily OPD for Orthopaedics, Urology, and General Medicine, advanced modular operation theatres, and specialist care on appointment basis.",
   aboutStory: [
     "Established in 1998 as a small clinic, Indira Hospital, Chintamani has grown steadily over the years into a trusted healthcare institution, serving the community with dedication, compassion, and integrity. Through continuous improvement and a commitment to ethical medical practices, the hospital has built a strong reputation for providing safe, reliable, and patient-centred healthcare.",
     "Driven by a vision to deliver advanced speciality care closer to home, Indira Hospital underwent a major transformation in 2025, evolving into a modern Super Speciality Healthcare Facility. The hospital was upgraded with advanced medical infrastructure, state-of-the-art modular operation theatres, improved surgical facilities, and enhanced patient care systems to provide high-quality treatment in a safe and comfortable environment.",
-    "Continuing this journey of excellence, 2026 marked another important milestone with the launch of a dedicated Urology Department, expanding the hospital's speciality services while complementing its well-established Orthopaedics Department. This expansion enables patients to access comprehensive surgical and speciality care under one roof."
+    "Continuing this journey of excellence, Indira Hospital proudly serves as a Super Speciality & Multispeciality Hospital, offering daily OPD for Orthopaedics, Urology, and General Medicine, alongside appointment-based specialist consultations in Nephrology, Dermatology, Gynaecology, Maxillofacial Surgery, Gastroenterology, Neurosurgery, and Plastic Surgery."
   ],
   contact: {
     address: "Near Park, N.R. Extension, Ram Mandir Road",
@@ -84,12 +86,28 @@ export const siteData: SiteData = {
         department: "Orthopaedic OPD",
         morning: "10:30 AM – 3:00 PM",
         evening: "5:30 PM – 8:30 PM",
+        status: "Daily OPD Available",
+        notes: "Daily OPD available Monday through Saturday. 24/7 emergency casualty."
       },
       {
         department: "Urology OPD",
         morning: "10:30 AM – 3:00 PM (Mon–Sat)",
         evening: "10:30 AM – 8:30 PM (Sunday)",
-        notes: "Please confirm with reception before visit"
+        status: "Daily OPD Available",
+        notes: "Daily OPD available. Laser stone & endourology consultations."
+      },
+      {
+        department: "General Medicine OPD",
+        morning: "10:30 AM – 3:00 PM",
+        evening: "5:30 PM – 8:30 PM",
+        status: "Daily OPD Available",
+        notes: "Daily OPD available for adult primary care, diabetes & hypertension."
+      },
+      {
+        department: "Nephrology, Dermatology & Other Specialities",
+        timings: "Scheduled on Prior Appointment",
+        status: "Available on Appointment Basis",
+        notes: "Available on Appointment Basis — Please contact reception to book."
       }
     ]
   },
