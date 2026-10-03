@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { siteData } from "@/data/site";
 import { QrCode, ExternalLink, Copy, Check, Camera, ShieldCheck, Sparkles, Smartphone } from "lucide-react";
-import QrCameraScanner from "./QrCameraScanner";
+import dynamic from "next/dynamic";
+const QrCameraScanner = dynamic(() => import("./QrCameraScanner"), { ssr: false });
 
 interface QrBookingCardProps {
   variant?: "card" | "compact" | "banner";
