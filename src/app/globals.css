@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0068B0;
+  --color-primary-hover: #075486;
+  --color-blue-50: #EAF3FA;
+  --color-blue-100: #D3E6F4;
+  --color-blue-600: #0068B0;
+  --color-blue-700: #075486;
+  --color-blue-800: #0D436A;
+  --color-blue-900: #0A2F4A;
+  --color-coral-500: #D94A32;
+  --color-coral-600: #C03A21;
+  --color-pink-300: #F4A5C8;
+  --color-mint-300: #9BE8D2;
+  --color-cyan-200: #C2EFF8;
+  --color-offwhite: #FAFAF8;
+  --color-charcoal: #17212B;
+  --color-muted: #66727D;
+  
+  --font-heading: var(--font-manrope), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+:root {
+  --background: #FAFAF8;
+  --foreground: #17212B;
+  --line-color: rgba(23, 33, 43, 0.10);
+  --line-strong-color: rgba(23, 33, 43, 0.18);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-manrope), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Custom shadow utilities matching ui-context.md */
+.shadow-soft {
+  box-shadow: 0 1px 2px rgba(23,33,43,0.04), 0 8px 24px rgba(23,33,43,0.06);
+}
+
+.shadow-lift {
+  box-shadow: 0 2px 4px rgba(23,33,43,0.05), 0 16px 40px rgba(23,33,43,0.10);
+}
+
+/* Scrim for photography readability */
+.scrim-hero {
+  background: linear-gradient(
+    90deg,
+    rgba(10, 47, 74, 0.88) 0%,
+    rgba(10, 47, 74, 0.72) 38%,
+    rgba(10, 47, 74, 0.35) 60%,
+    rgba(10, 47, 74, 0.1) 100%
+  );
+}
+
+@media (max-width: 1024px) {
+  .scrim-hero {
+    background: linear-gradient(
+      180deg,
+      rgba(10, 47, 74, 0.5) 0%,
+      rgba(10, 47, 74, 0.82) 45%,
+      rgba(10, 47, 74, 0.96) 100%
+    );
+  }
+}
+
+.border-line {
+  border-color: rgba(23, 33, 43, 0.10);
+}
+
+.border-line-strong {
+  border-color: rgba(23, 33, 43, 0.18);
+}
