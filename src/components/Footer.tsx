@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { siteData } from "@/data/site";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { InstagramIcon, FacebookIcon } from "./SocialIcons";
 
 export default function Footer() {
   return (
@@ -39,6 +40,35 @@ export default function Footer() {
             <div className="pt-2 text-xs text-muted space-y-1">
               <p>• <strong>Emergency 24/7:</strong> {siteData.contact.emergency}</p>
               <p>• <strong>Reception:</strong> {siteData.contact.phone}</p>
+            </div>
+
+            {/* Official Social Links */}
+            <div className="pt-2 flex items-center gap-2.5">
+              <a
+                href={siteData.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-xl bg-neutral-100 hover:bg-pink-50 hover:text-[#E1306C] text-charcoal/80 flex items-center justify-center transition-all border border-line hover:border-pink-200"
+                aria-label="Follow Indira Hospital on Instagram"
+              >
+                <InstagramIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={siteData.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-xl bg-neutral-100 hover:bg-blue-50 hover:text-[#1877F2] text-charcoal/80 flex items-center justify-center transition-all border border-line hover:border-blue-200"
+                aria-label="Follow Indira Hospital on Facebook"
+              >
+                <FacebookIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={`mailto:${siteData.contact.email}`}
+                className="w-9 h-9 rounded-xl bg-neutral-100 hover:bg-red-50 hover:text-[#EA4335] text-charcoal/80 flex items-center justify-center transition-all border border-line hover:border-red-200"
+                aria-label="Email Indira Hospital"
+              >
+                <Mail className="w-4 h-4" />
+              </a>
             </div>
           </div>
 

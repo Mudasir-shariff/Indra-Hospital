@@ -9,6 +9,8 @@ export interface ContactInfo {
   email: string;
   mapsUrl: string;
   mapsEmbedUrl: string;
+  bookingUrl: string;
+  bookingQrImage: string;
   opdHours: {
     department: string;
     morning: string;
@@ -30,6 +32,10 @@ export interface SiteData {
   shortDescription: string;
   aboutStory: string[];
   contact: ContactInfo;
+  social: {
+    instagram: string;
+    facebook: string;
+  };
 }
 
 export const siteData: SiteData = {
@@ -71,6 +77,8 @@ export const siteData: SiteData = {
     email: "indirahosp@gmail.com",
     mapsUrl: "https://maps.google.com/?q=Indira+Hospital+Chintamani+Karnataka",
     mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3883.6749363162784!2d78.055!3d13.402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDI0JzA3LjIiTiA3OMKwMDMnMTguMCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin",
+    bookingUrl: "https://u.tatvacare.in/r/gPbtuE",
+    bookingQrImage: "/images/booking-qr.png",
     opdHours: [
       {
         department: "Orthopaedic OPD",
@@ -84,5 +92,9 @@ export const siteData: SiteData = {
         notes: "Please confirm with reception before visit"
       }
     ]
+  },
+  social: {
+    instagram: "https://www.instagram.com/indirahospitalcmy?stkn=ZGNrM3VlZzFhdDd3",
+    facebook: "https://www.facebook.com/share/18Y5xLpxU7/",
   }
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { MapPin, Phone, Mail, Clock, Activity, Navigation, ArrowUpRight } from "lucide-react";
 import { siteData } from "@/data/site";
+import QrBookingCard from "./QrBookingCard";
 
 export default function ContactSection() {
   return (
@@ -8,7 +9,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="max-w-2xl mb-14">
+        <div className="max-w-2xl mb-10">
           <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0068B0] mb-2">
             <span className="w-6 h-0.5 bg-[#C03A21]" />
             Location & Contact
@@ -19,6 +20,11 @@ export default function ContactSection() {
           <p className="text-muted text-sm sm:text-base mt-2 font-light">
             Conveniently situated in the heart of Chintamani with comprehensive OPD consultations and 24/7 trauma emergency care.
           </p>
+        </div>
+
+        {/* Scan QR to Book Online Banner */}
+        <div className="mb-12">
+          <QrBookingCard />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">

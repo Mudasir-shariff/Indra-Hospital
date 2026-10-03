@@ -111,6 +111,10 @@ export function getHospitalJsonLd() {
       longitude: 78.055,
     },
     hasMap: siteData.contact.mapsUrl,
+    sameAs: [
+      siteData.social.instagram,
+      siteData.social.facebook,
+    ],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",

@@ -17,8 +17,11 @@ import {
   Calendar, 
   Stethoscope, 
   ShieldCheck, 
-  ArrowUpRight 
+  ArrowUpRight,
+  QrCode
 } from "lucide-react";
+import QrBookingCard from "@/components/QrBookingCard";
+import { InstagramIcon, FacebookIcon } from "@/components/SocialIcons";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -53,6 +56,64 @@ export default function ContactPage() {
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
+          {/* Official 4-Way Appointment Options from website info */}
+          <div className="mb-14">
+            <div className="max-w-2xl mb-8">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0068B0] block mb-1">
+                Scheduling Guidelines
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-charcoal">
+                How to Book an Appointment
+              </h2>
+              <p className="text-sm text-muted mt-1 font-light">
+                Booking an appointment with our specialists is simple and convenient. You can schedule your consultation by:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+              <div className="p-5 rounded-2xl bg-white border border-line shadow-soft flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold text-[#0068B0] uppercase tracking-wider">Method 01</span>
+                  <h4 className="text-sm font-bold text-charcoal mt-1 mb-1">Call Reception</h4>
+                  <p className="text-xs text-muted leading-relaxed">During OPD hours (10:30 AM – 3:00 PM & 5:30 PM – 8:30 PM).</p>
+                </div>
+                <a href={`tel:${siteData.contact.phone}`} className="text-xs font-bold text-[#0068B0] mt-3 hover:underline">
+                  {siteData.contact.phone} →
+                </a>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-white border border-line shadow-soft flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold text-[#0068B0] uppercase tracking-wider">Method 02</span>
+                  <h4 className="text-sm font-bold text-charcoal mt-1 mb-1">Visit Reception</h4>
+                  <p className="text-xs text-muted leading-relaxed">Near Park, N.R. Extension, Ram Mandir Road, Chintamani.</p>
+                </div>
+                <span className="text-xs font-semibold text-charcoal/80 mt-3">Walk-in OPD Available</span>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-white border border-line shadow-soft flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold text-[#0068B0] uppercase tracking-wider">Method 03</span>
+                  <h4 className="text-sm font-bold text-charcoal mt-1 mb-1">Online Form</h4>
+                  <p className="text-xs text-muted leading-relaxed">Submit the patient request form below for prompt WhatsApp confirmation.</p>
+                </div>
+                <span className="text-xs font-semibold text-[#0068B0] mt-3">Direct Form Below ↓</span>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-blue-50/40 border border-[#0068B0]/30 shadow-soft flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold text-[#0068B0] uppercase tracking-wider">Method 04</span>
+                  <h4 className="text-sm font-bold text-charcoal mt-1 mb-1">Scan QR Code</h4>
+                  <p className="text-xs text-muted leading-relaxed">Scan with your smartphone camera to book online on TatvaCare portal.</p>
+                </div>
+                <span className="text-xs font-bold text-emerald-700 mt-3">Instant Portal Booking ↓</span>
+              </div>
+            </div>
+
+            {/* QR Booking & Scanner Card */}
+            <QrBookingCard />
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
             
             {/* Left Column: Direct Appointment Form */}
@@ -261,6 +322,32 @@ export default function ContactPage() {
                   <div className="text-xs text-charcoal font-medium space-y-1">
                     <div>• <strong>Orthopaedic:</strong> 10:30 AM – 3:00 PM & 5:30 PM – 8:30 PM</div>
                     <div>• <strong>Urology:</strong> Mon–Sat 10:30 AM – 3:00 PM | Sun 10:30 AM – 8:30 PM</div>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-line">
+                  <span className="text-xs font-bold uppercase tracking-wider text-muted block mb-2.5">
+                    Official Social Channels
+                  </span>
+                  <div className="flex flex-wrap items-center gap-2.5">
+                    <a
+                      href={siteData.social.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-pink-50 hover:bg-pink-100 text-[#E1306C] text-xs font-semibold border border-pink-100 transition-colors"
+                    >
+                      <InstagramIcon className="w-3.5 h-3.5" />
+                      <span>@indirahospitalcmy</span>
+                    </a>
+                    <a
+                      href={siteData.social.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-[#1877F2] text-xs font-semibold border border-blue-100 transition-colors"
+                    >
+                      <FacebookIcon className="w-3.5 h-3.5" />
+                      <span>Indira Hospital</span>
+                    </a>
                   </div>
                 </div>
               </div>

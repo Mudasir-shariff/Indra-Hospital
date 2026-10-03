@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 
 import { buildMeta, getBreadcrumbJsonLd } from "@/lib/seo";
+import QrBookingCard from "@/components/QrBookingCard";
 
 export const metadata = buildMeta({
   title: "OPD Timings & Patient Guide | Indira Hospital, Chintamani",
@@ -108,6 +109,9 @@ export default function PatientInfoPage() {
               </p>
             </div>
           </div>
+
+          {/* Quick QR Appointment Card */}
+          <QrBookingCard />
 
           {/* What to Bring & Admission Process */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

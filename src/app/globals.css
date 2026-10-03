@@ -79,3 +79,19 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .border-line-strong {
   border-color: rgba(23, 33, 43, 0.18);
 }
+
+@keyframes scannerLaser {
+  0% {
+    top: 6%;
+    opacity: 0.4;
+  }
+  50% {
+    top: 90%;
+    opacity: 1;
+  }
+  100% {
+    top: 6%;
+    opacity: 0.4;
+  }
+}
+
