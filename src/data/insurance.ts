@@ -21,7 +21,7 @@ export const insuranceData: InsuranceData = {
     name: "Mr. Raju Singh",
     role: "Insurance Executive & Admin",
     phone: "+91 99805 65420",
-    image: "/images/Raju singh.jpeg"
+    image: "/images/raju-singh.jpeg"
   },
   cashlessSteps: [
     "Present a valid Health Insurance Card / e-Card and Government Photo ID at the time of admission.",
