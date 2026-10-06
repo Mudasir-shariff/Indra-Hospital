@@ -59,12 +59,12 @@ export default function InsuranceSection() {
           <div className="lg:col-span-5">
             <div className="rounded-3xl bg-[#FAFAF8] border border-line p-8 shadow-soft relative overflow-hidden">
               {insuranceData.executive.image ? (
-                <div className="w-20 h-20 rounded-2xl overflow-hidden border border-blue-100 mb-6">
+                <div className="w-32 h-32 rounded-2xl overflow-hidden border border-blue-100 mb-6">
                   <Image
                     src={insuranceData.executive.image}
                     alt={insuranceData.executive.name}
-                    width={80}
-                    height={80}
+                    width={128}
+                    height={128}
                     className="w-full h-full object-cover object-top"
                   />
                 </div>

@@ -62,66 +62,66 @@ export default function DoctorsPage() {
               {consultants.map((doc) => (
                 <div
                   key={doc.slug}
-                  className="bg-white rounded-3xl p-7 sm:p-8 border border-line shadow-soft flex flex-col justify-between hover:border-[#0068B0]/40 transition-all"
+                  className="bg-white rounded-3xl border border-line shadow-soft flex flex-col justify-between hover:border-[#0068B0]/40 transition-all overflow-hidden"
                 >
-                  <div>
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="w-16 h-16 rounded-2xl overflow-hidden border border-blue-100 bg-blue-50 flex-shrink-0">
-                        {doc.image ? (
-                          <Image
-                            src={doc.image}
-                            alt={doc.name}
-                            width={64}
-                            height={64}
-                            className="w-full h-full object-cover object-top"
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center text-[#0068B0] font-heading font-extrabold text-2xl">
-                            {doc.name.split(" ")[1]?.[0] || doc.name[0]}
-                          </div>
-                        )}
+                  {/* Photo */}
+                  <div className="relative w-full h-64 bg-blue-50">
+                    {doc.image ? (
+                      <Image
+                        src={doc.image}
+                        alt={doc.name}
+                        fill
+                        className="object-cover object-top"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-[#0068B0] font-heading font-extrabold text-5xl">
+                        {doc.name.split(" ")[1]?.[0] || doc.name[0]}
                       </div>
-                      {doc.experience && (
-                        <span className="px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-100">
-                          {doc.experience} Surgical Exp
-                        </span>
-                      )}
-                    </div>
-
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#0068B0] block">
-                      {doc.department}
-                    </span>
-                    <h3 className="text-2xl font-bold font-heading text-charcoal mt-1 mb-1">
-                      {doc.name}
-                    </h3>
-                    <p className="text-xs font-semibold text-muted mb-4">
-                      {doc.title}
-                    </p>
-
-                    <p className="text-sm text-muted leading-relaxed font-light mb-6">
-                      {doc.description}
-                    </p>
+                    )}
+                    {doc.experience && (
+                      <span className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-emerald-600/90 text-white text-xs font-bold backdrop-blur-sm">
+                        {doc.experience} Exp
+                      </span>
+                    )}
                   </div>
 
-                  <div className="pt-4 border-t border-line">
-                    <div className="text-xs font-bold uppercase tracking-wider text-charcoal mb-2.5">
-                      Clinical Focus:
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
-                      {doc.specialization.map((spec) => (
-                        <div key={spec} className="text-xs text-muted flex items-start gap-1.5">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#0068B0] flex-shrink-0 mt-0.5" />
-                          <span>{spec}</span>
-                        </div>
-                      ))}
+                  <div className="p-7 sm:p-8 flex flex-col flex-1">
+                    <div className="flex-1">
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#0068B0] block">
+                        {doc.department}
+                      </span>
+                      <h3 className="text-2xl font-bold font-heading text-charcoal mt-1 mb-1">
+                        {doc.name}
+                      </h3>
+                      <p className="text-xs font-semibold text-muted mb-4">
+                        {doc.title}
+                      </p>
+
+                      <p className="text-sm text-muted leading-relaxed font-light mb-6">
+                        {doc.description}
+                      </p>
                     </div>
 
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center justify-center w-full py-3 rounded-xl bg-blue-50 hover:bg-[#0068B0] text-[#0068B0] hover:text-white font-semibold text-xs transition-colors"
-                    >
-                      Book Consultation with {doc.name}
-                    </Link>
+                    <div className="pt-4 border-t border-line">
+                      <div className="text-xs font-bold uppercase tracking-wider text-charcoal mb-2.5">
+                        Clinical Focus:
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
+                        {doc.specialization.map((spec) => (
+                          <div key={spec} className="text-xs text-muted flex items-start gap-1.5">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#0068B0] flex-shrink-0 mt-0.5" />
+                            <span>{spec}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <Link
+                        href="/contact"
+                        className="inline-flex items-center justify-center w-full py-3 rounded-xl bg-blue-50 hover:bg-[#0068B0] text-[#0068B0] hover:text-white font-semibold text-xs transition-colors"
+                      >
+                        Book Consultation with {doc.name}
+                      </Link>
+                    </div>
                   </div>
                 </div>
               ))}
