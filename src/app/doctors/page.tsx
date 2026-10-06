@@ -58,55 +58,57 @@ export default function DoctorsPage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {consultants.map((doc) => (
                 <div
                   key={doc.slug}
-                  className="bg-white rounded-3xl border border-line shadow-soft flex flex-col justify-between hover:border-[#0068B0]/40 transition-all overflow-hidden"
+                  className="bg-white rounded-3xl border border-line shadow-soft flex flex-col sm:flex-row hover:border-[#0068B0]/40 transition-all overflow-hidden group"
                 >
                   {/* Photo */}
-                  <div className="relative w-full h-64 bg-blue-50">
+                  <div className="relative w-full sm:w-60 md:w-64 aspect-[4/5] sm:aspect-auto sm:min-h-full flex-shrink-0 bg-slate-100 overflow-hidden">
                     {doc.image ? (
                       <Image
                         src={doc.image}
                         alt={doc.name}
                         fill
-                        className="object-cover object-top"
+                        sizes="(max-width: 640px) 100vw, 256px"
+                        className="object-cover object-top group-hover:scale-102 transition-transform duration-300"
+                        priority={doc.slug === "dr-venkatesh-kr" || doc.slug === "dr-shashank-ka"}
                       />
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center text-[#0068B0] font-heading font-extrabold text-5xl">
+                      <div className="w-full h-full min-h-[280px] flex items-center justify-center text-[#0068B0] font-heading font-extrabold text-5xl">
                         {doc.name.split(" ")[1]?.[0] || doc.name[0]}
                       </div>
                     )}
                     {doc.experience && (
-                      <span className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-emerald-600/90 text-white text-xs font-bold backdrop-blur-sm">
+                      <span className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-emerald-600/95 text-white text-xs font-bold backdrop-blur-sm shadow-sm">
                         {doc.experience} Exp
                       </span>
                     )}
                   </div>
 
-                  <div className="p-7 sm:p-8 flex flex-col flex-1">
-                    <div className="flex-1">
+                  <div className="p-6 sm:p-7 flex flex-col justify-between flex-1">
+                    <div>
                       <span className="text-xs font-bold uppercase tracking-wider text-[#0068B0] block">
                         {doc.department}
                       </span>
-                      <h3 className="text-2xl font-bold font-heading text-charcoal mt-1 mb-1">
+                      <h3 className="text-xl sm:text-2xl font-bold font-heading text-charcoal mt-1 mb-1">
                         {doc.name}
                       </h3>
-                      <p className="text-xs font-semibold text-muted mb-4">
+                      <p className="text-xs font-semibold text-muted mb-3">
                         {doc.title}
                       </p>
 
-                      <p className="text-sm text-muted leading-relaxed font-light mb-6">
+                      <p className="text-xs sm:text-sm text-muted leading-relaxed font-light mb-5">
                         {doc.description}
                       </p>
                     </div>
 
                     <div className="pt-4 border-t border-line">
-                      <div className="text-xs font-bold uppercase tracking-wider text-charcoal mb-2.5">
+                      <div className="text-[11px] font-bold uppercase tracking-wider text-charcoal mb-2">
                         Clinical Focus:
                       </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
+                      <div className="grid grid-cols-1 gap-1.5 mb-5">
                         {doc.specialization.map((spec) => (
                           <div key={spec} className="text-xs text-muted flex items-start gap-1.5">
                             <CheckCircle2 className="w-3.5 h-3.5 text-[#0068B0] flex-shrink-0 mt-0.5" />
@@ -117,7 +119,7 @@ export default function DoctorsPage() {
 
                       <Link
                         href="/contact"
-                        className="inline-flex items-center justify-center w-full py-3 rounded-xl bg-blue-50 hover:bg-[#0068B0] text-[#0068B0] hover:text-white font-semibold text-xs transition-colors"
+                        className="inline-flex items-center justify-center w-full py-2.5 rounded-xl bg-blue-50 hover:bg-[#0068B0] text-[#0068B0] hover:text-white font-semibold text-xs transition-colors"
                       >
                         Book Consultation with {doc.name}
                       </Link>

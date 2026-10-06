@@ -44,12 +44,13 @@ export default function DoctorsSection() {
             >
               <div>
                 {/* Doctor Photo Header */}
-                <div className="relative w-full h-64 sm:h-72 bg-blue-50 overflow-hidden">
+                <div className="relative w-full aspect-[4/5] bg-slate-100 overflow-hidden">
                   {doc.image ? (
                     <Image
                       src={doc.image}
                       alt={doc.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 380px"
                       className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
                     />
                   ) : (
@@ -58,7 +59,7 @@ export default function DoctorsSection() {
                     </div>
                   )}
                   {doc.experience && (
-                    <span className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-emerald-600/90 text-white text-xs font-bold backdrop-blur-sm shadow-sm">
+                    <span className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-emerald-600/95 text-white text-xs font-bold backdrop-blur-sm shadow-sm">
                       {doc.experience} Exp
                     </span>
                   )}
