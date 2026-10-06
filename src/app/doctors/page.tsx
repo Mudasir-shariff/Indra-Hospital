@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import SubpageHero from "@/components/SubpageHero";
 import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
+import Image from "next/image";
 import { doctorsData, visitingSpecialists } from "@/data/doctors";
 import { Stethoscope, Award, CheckCircle2, Calendar, Phone } from "lucide-react";
 import { siteData } from "@/data/site";
@@ -65,8 +66,20 @@ export default function DoctorsPage() {
                 >
                   <div>
                     <div className="flex items-start justify-between mb-6">
-                      <div className="w-16 h-16 rounded-2xl bg-blue-50 text-[#0068B0] flex items-center justify-center font-heading font-extrabold text-2xl border border-blue-100">
-                        {doc.name.split(" ")[1]?.[0] || doc.name[0]}
+                      <div className="w-16 h-16 rounded-2xl overflow-hidden border border-blue-100 bg-blue-50 flex-shrink-0">
+                        {doc.image ? (
+                          <Image
+                            src={doc.image}
+                            alt={doc.name}
+                            width={64}
+                            height={64}
+                            className="w-full h-full object-cover object-top"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center text-[#0068B0] font-heading font-extrabold text-2xl">
+                            {doc.name.split(" ")[1]?.[0] || doc.name[0]}
+                          </div>
+                        )}
                       </div>
                       {doc.experience && (
                         <span className="px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-100">

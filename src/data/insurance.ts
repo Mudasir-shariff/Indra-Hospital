@@ -6,6 +6,7 @@ export interface InsuranceData {
     name: string;
     role: string;
     phone: string;
+    image?: string;
   };
   cashlessSteps: string[];
   reimbursementDocs: string[];
@@ -18,8 +19,9 @@ export const insuranceData: InsuranceData = {
   description: "At INDIRA HOSPITAL – Super Speciality & Multispeciality Hospital, we are committed to making quality healthcare affordable, convenient, and stress-free. We provide assistance for cashless hospitalization and medical reimbursement through empanelled insurance companies and Third-Party Administrators (TPAs), subject to policy terms, eligibility, and prior authorization.",
   executive: {
     name: "Mr. Raju Singh",
-    role: "Insurance & TPA Executive",
-    phone: "+91 99805 65420"
+    role: "Insurance Executive & Admin",
+    phone: "+91 99805 65420",
+    image: "/images/Raju singh.jpeg"
   },
   cashlessSteps: [
     "Present a valid Health Insurance Card / e-Card and Government Photo ID at the time of admission.",

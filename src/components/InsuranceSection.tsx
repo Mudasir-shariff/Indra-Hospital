@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { ShieldCheck, Phone, CheckCircle2, FileText, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ShieldCheck, Phone, CheckCircle2, ArrowRight } from "lucide-react";
 import { insuranceData } from "@/data/insurance";
 
 export default function InsuranceSection() {
@@ -57,9 +58,21 @@ export default function InsuranceSection() {
           {/* Right Column: Help Desk Executive Contact Card */}
           <div className="lg:col-span-5">
             <div className="rounded-3xl bg-[#FAFAF8] border border-line p-8 shadow-soft relative overflow-hidden">
-              <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#0068B0] flex items-center justify-center mb-6">
-                <ShieldCheck className="w-6 h-6 stroke-[1.75]" />
-              </div>
+              {insuranceData.executive.image ? (
+                <div className="w-20 h-20 rounded-2xl overflow-hidden border border-blue-100 mb-6">
+                  <Image
+                    src={insuranceData.executive.image}
+                    alt={insuranceData.executive.name}
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+              ) : (
+                <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#0068B0] flex items-center justify-center mb-6">
+                  <ShieldCheck className="w-6 h-6 stroke-[1.75]" />
+                </div>
+              )}
 
               <span className="text-xs font-bold uppercase tracking-wider text-[#0068B0] block mb-1">
                 Dedicated Insurance Officer

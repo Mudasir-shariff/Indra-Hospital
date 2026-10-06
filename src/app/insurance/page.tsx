@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SubpageHero from "@/components/SubpageHero";
 import CtaSection from "@/components/CtaSection";
+import Image from "next/image";
 import { insuranceData } from "@/data/insurance";
 import { ShieldCheck, Phone, CheckCircle2, FileText, ArrowRight } from "lucide-react";
 
@@ -69,9 +70,21 @@ export default function InsurancePage() {
             {/* Officer Contact Box */}
             <div className="lg:col-span-5">
               <div className="bg-white rounded-3xl p-8 border border-line shadow-soft space-y-6">
+              {insuranceData.executive.image ? (
+                <div className="w-20 h-20 rounded-2xl overflow-hidden border border-blue-100">
+                  <Image
+                    src={insuranceData.executive.image}
+                    alt={insuranceData.executive.name}
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+              ) : (
                 <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#0068B0] flex items-center justify-center">
                   <ShieldCheck className="w-6 h-6 stroke-[1.75]" />
                 </div>
+              )}
 
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-[#0068B0] block mb-1">
