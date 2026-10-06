@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, UserCheck, Stethoscope, Award, Calendar } from "lucide-react";
 import { doctorsData, visitingSpecialists } from "@/data/doctors";
 
@@ -39,39 +40,48 @@ export default function DoctorsSection() {
           {primaryDoctors.map((doc) => (
             <div
               key={doc.slug}
-              className="bg-[#FAFAF8] rounded-2xl border border-line p-6 sm:p-7 flex flex-col justify-between hover:border-[#0068B0]/40 transition-all duration-200 shadow-soft group"
+              className="bg-[#FAFAF8] rounded-2xl border border-line flex flex-col justify-between hover:border-[#0068B0]/40 transition-all duration-200 shadow-soft group overflow-hidden"
             >
               <div>
-                {/* Doctor Avatar / Icon Header */}
-                <div className="flex items-start justify-between mb-5">
-                  <div className="w-14 h-14 rounded-2xl bg-blue-50 text-[#0068B0] flex items-center justify-center border border-blue-100/60 font-heading font-bold text-xl">
-                    {doc.name.split(" ")[1]?.[0] || doc.name[0]}
-                  </div>
+                {/* Doctor Photo Header */}
+                <div className="relative w-full h-64 sm:h-72 bg-blue-50 overflow-hidden">
+                  {doc.image ? (
+                    <Image
+                      src={doc.image}
+                      alt={doc.name}
+                      fill
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-[#0068B0] font-heading font-extrabold text-4xl">
+                      {doc.name.split(" ")[1]?.[0] || doc.name[0]}
+                    </div>
+                  )}
                   {doc.experience && (
-                    <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-100">
+                    <span className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-emerald-600/90 text-white text-xs font-bold backdrop-blur-sm shadow-sm">
                       {doc.experience} Exp
                     </span>
                   )}
                 </div>
 
-                <div className="mb-3">
+                <div className="p-6 sm:p-7">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-[#0068B0] block">
                     {doc.department}
                   </span>
-                  <h3 className="text-xl font-bold font-heading text-charcoal mt-0.5 group-hover:text-[#0068B0] transition-colors">
+                  <h3 className="text-xl font-bold font-heading text-charcoal mt-1 group-hover:text-[#0068B0] transition-colors">
                     {doc.name}
                   </h3>
                   <div className="text-xs font-medium text-muted mt-1 leading-snug">
                     {doc.title}
                   </div>
-                </div>
 
-                <p className="text-xs sm:text-sm text-muted leading-relaxed line-clamp-3 mb-5 font-light">
-                  {doc.description}
-                </p>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed line-clamp-3 mt-4 mb-2 font-light">
+                    {doc.description}
+                  </p>
+                </div>
               </div>
 
-              <div className="pt-4 border-t border-line/60">
+              <div className="px-6 pb-6 sm:px-7 sm:pb-7 pt-4 border-t border-line/60">
                 <div className="text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
                   Specialized In:
                 </div>
