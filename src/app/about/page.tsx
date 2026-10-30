@@ -1,10 +1,13 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SubpageHero from "@/components/SubpageHero";
 import CtaSection from "@/components/CtaSection";
 import { siteData } from "@/data/site";
-import { Award, Building2, HeartHandshake, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { facilityPhotos } from "@/data/facilities";
+import { Award, Building2, HeartHandshake, ShieldCheck, CheckCircle2, ArrowRight } from "lucide-react";
 
 import { buildMeta, getBreadcrumbJsonLd } from "@/lib/seo";
 
@@ -102,6 +105,65 @@ export default function AboutPage() {
                   <p className="text-sm text-muted leading-relaxed font-light">
                     {ms.description}
                   </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Real Hospital Infrastructure Showcase */}
+          <div className="border-t border-line pt-16 mb-20">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#0068B0] block mb-1">
+                  Modern Healthcare Campus
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-bold font-heading text-charcoal tracking-tight">
+                  Infrastructure Designed for Patient Healing
+                </h2>
+                <p className="text-sm text-muted max-w-2xl mt-1 font-light">
+                  Direct glimpses into our modular surgical suites, well-maintained inpatient wards, continuous monitoring recovery rooms, and dedicated physical therapy unit.
+                </p>
+              </div>
+              <Link
+                href="/facilities"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0068B0] hover:text-[#075486] transition-colors self-start sm:self-auto"
+              >
+                <span>Full specifications</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {facilityPhotos.map((photo) => (
+                <div key={photo.id} className="bg-white rounded-2xl overflow-hidden border border-line shadow-soft group flex flex-col justify-between">
+                  <div>
+                    <div className="relative h-48 w-full overflow-hidden">
+                      <Image
+                        src={photo.image}
+                        alt={photo.alt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                      <span className="absolute bottom-2.5 left-2.5 right-2.5 text-[10px] font-bold uppercase tracking-wider text-white truncate">
+                        {photo.badge}
+                      </span>
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-sm font-bold font-heading text-charcoal mb-1.5 line-clamp-2">
+                        {photo.title}
+                      </h3>
+                      <p className="text-xs text-muted leading-relaxed font-light line-clamp-3">
+                        {photo.description}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="px-4 pb-4 pt-1">
+                    <span className="text-[10px] font-semibold text-[#0068B0] uppercase tracking-wider">
+                      {photo.category}
+                    </span>
+                  </div>
                 </div>
               ))}
             </div>

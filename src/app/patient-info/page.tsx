@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SubpageHero from "@/components/SubpageHero";
@@ -11,7 +12,9 @@ import {
   FileText, 
   Users, 
   ShieldCheck, 
-  AlertCircle 
+  AlertCircle,
+  Building2,
+  Activity
 } from "lucide-react";
 
 import { buildMeta, getBreadcrumbJsonLd } from "@/lib/seo";
@@ -120,6 +123,156 @@ export default function PatientInfoPage() {
               <p className="text-xs text-muted leading-relaxed font-light">
                 * To protect patient recovery and infection control, a maximum of 2 visitors are allowed at the bedside during scheduled hours.
               </p>
+            </div>
+          </div>
+
+          {/* Inpatient & Recovery Environment Photo Showcase */}
+          <div className="bg-white rounded-3xl p-8 sm:p-10 border border-line shadow-soft">
+            <div className="max-w-3xl mb-8">
+              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0068B0] mb-2">
+                <Building2 className="w-3.5 h-3.5" /> Inpatient & Diagnostic Environment
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-charcoal">
+                Designed for Calm, Sterile & Supported Healing
+              </h2>
+              <p className="text-sm text-muted mt-2 leading-relaxed font-light">
+                Whether you are admitted for an elective surgery or emergency care, our hospital provides a welcoming reception counter, hygienic general wards, continuous vital signs monitoring suites, 24/7 digital X-ray, and an on-premise pharmacy.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+              {/* Reception Desk */}
+              <div className="bg-[#FAFAF8] rounded-2xl overflow-hidden border border-line flex flex-col group">
+                <div className="relative h-52 w-full overflow-hidden">
+                  <Image
+                    src="/images/facilities/hospital-reception.jpg"
+                    alt="Indira Hospital Main Reception and Patient Helpdesk"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-2.5 left-2.5 text-[10px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white px-2 py-0.5 rounded border border-white/20">
+                    Reception & Helpdesk
+                  </span>
+                </div>
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-base font-bold font-heading text-charcoal mb-1">
+                      Admissions & Registration
+                    </h3>
+                    <p className="text-xs text-muted leading-relaxed font-light">
+                      Prompt outpatient consultation booking, inpatient admission coordination, and cashless insurance helpdesk desk.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* General Ward */}
+              <div className="bg-[#FAFAF8] rounded-2xl overflow-hidden border border-line flex flex-col group">
+                <div className="relative h-52 w-full overflow-hidden">
+                  <Image
+                    src="/images/facilities/general-ward.jpg"
+                    alt="Clean and Spacious Inpatient General Ward at Indira Hospital"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-2.5 left-2.5 text-[10px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white px-2 py-0.5 rounded border border-white/20">
+                    Inpatient General Ward
+                  </span>
+                </div>
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-base font-bold font-heading text-charcoal mb-1">
+                      30-Bed Inpatient Ward
+                    </h3>
+                    <p className="text-xs text-muted leading-relaxed font-light">
+                      Clean, well-ventilated wards with ergonomic patient beds, bedside storage lockers, and 24/7 dedicated nursing staff.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Recovery Ward */}
+              <div className="bg-[#FAFAF8] rounded-2xl overflow-hidden border border-line flex flex-col group">
+                <div className="relative h-52 w-full overflow-hidden">
+                  <Image
+                    src="/images/facilities/recovery-monitoring-ward.jpg"
+                    alt="Post-Operative Recovery Ward with Digital Multi-Parameter Monitors"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-2.5 left-2.5 text-[10px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white px-2 py-0.5 rounded border border-white/20">
+                    Recovery & Monitoring
+                  </span>
+                </div>
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-base font-bold font-heading text-charcoal mb-1">
+                      Continuous Vital Monitoring
+                    </h3>
+                    <p className="text-xs text-muted leading-relaxed font-light">
+                      High-dependency recovery suites with wall-mounted multi-parameter vital monitors, central oxygen, and privacy cubicles.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+              {/* Digital X-Ray */}
+              <div className="bg-[#FAFAF8] rounded-2xl overflow-hidden border border-line flex flex-col sm:flex-row group">
+                <div className="relative h-48 sm:h-auto sm:w-2/5 overflow-hidden flex-shrink-0">
+                  <Image
+                    src="/images/facilities/digital-xray.jpg"
+                    alt="24/7 Digital Direct Radiography DR X-Ray Facility"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-2.5 left-2.5 text-[10px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white px-2 py-0.5 rounded border border-white/20">
+                    24/7 Digital X-Ray
+                  </span>
+                </div>
+                <div className="p-5 flex flex-col justify-center">
+                  <h3 className="text-base font-bold font-heading text-charcoal mb-1">
+                    Direct Radiography (DR) Diagnostics
+                  </h3>
+                  <p className="text-xs text-muted leading-relaxed font-light">
+                    Immediate digital X-ray imaging for trauma, joint alignment, and pre-op clearance with minimal radiation exposure and instant reporting.
+                  </p>
+                </div>
+              </div>
+
+              {/* In-House Pharmacy */}
+              <div className="bg-[#FAFAF8] rounded-2xl overflow-hidden border border-line flex flex-col sm:flex-row group">
+                <div className="relative h-48 sm:h-auto sm:w-2/5 overflow-hidden flex-shrink-0">
+                  <Image
+                    src="/images/facilities/in-house-pharmacy.jpg"
+                    alt="Indira Pharmacy - In-House 24/7 Pharmacy"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-2.5 left-2.5 text-[10px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white px-2 py-0.5 rounded border border-white/20">
+                    24/7 In-House Pharmacy
+                  </span>
+                </div>
+                <div className="p-5 flex flex-col justify-center">
+                  <h3 className="text-base font-bold font-heading text-charcoal mb-1">
+                    Indira Pharmacy (ಇಂದಿರ ಫಾರ್ಮಸಿ)
+                  </h3>
+                  <p className="text-xs text-muted leading-relaxed font-light">
+                    Fully stocked on-premise pharmacy ensuring round-the-clock availability of prescribed medications, surgical items, and IV fluids.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 

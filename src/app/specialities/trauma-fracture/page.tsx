@@ -4,7 +4,8 @@ import Footer from "@/components/Footer";
 import SubpageHero from "@/components/SubpageHero";
 import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
-import { CheckCircle2, ShieldAlert, Activity, Clock, Phone } from "lucide-react";
+import Image from "next/image";
+import { CheckCircle2, ShieldAlert, Activity, Clock, Phone, Sparkles } from "lucide-react";
 import { siteData } from "@/data/site";
 
 import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
@@ -129,6 +130,71 @@ export default function TraumaFracturePage() {
                   >
                     <Phone className="w-3.5 h-3.5" /> Call Casualty Now
                   </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Trauma Diagnostic & Surgical Infrastructure Showcase */}
+          <div className="border-t border-line pt-16">
+            <div className="max-w-3xl mb-8">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#C03A21] block mb-1">
+                Emergency Trauma Infrastructure
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-charcoal">
+                24/7 Digital X-Ray & Intraoperative C-Arm Guidance
+              </h2>
+              <p className="text-sm text-muted mt-2 font-light">
+                Rapid diagnosis and precision surgery are paramount in accident trauma. Our facility is equipped for instant on-arrival radiography and fluoroscopy-guided fracture fixation.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-3xl overflow-hidden border border-line shadow-soft group">
+                <div className="relative h-64 w-full overflow-hidden">
+                  <Image
+                    src="/images/facilities/digital-xray.jpg"
+                    alt="24/7 Digital Direct Radiography DR X-Ray Facility"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-[11px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded border border-white/20">
+                    24/7 Digital DR X-Ray
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold font-heading text-charcoal mb-2">
+                    Instant Digital Direct Radiography
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed font-light">
+                    Direct radiography exposure table and vertical bucky delivering instant high-definition imaging for emergency fracture assessment with reduced radiation exposure.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-3xl overflow-hidden border border-line shadow-soft group">
+                <div className="relative h-64 w-full overflow-hidden">
+                  <Image
+                    src="/images/facilities/modular-ot-carm.jpg"
+                    alt="Modular Operation Theatre with Digital C-Arm for Fracture Fixation"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-[11px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded border border-white/20">
+                    Modular OT & Digital C-Arm
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold font-heading text-charcoal mb-2">
+                    Fluoroscopy-Guided Surgical Fixation
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed font-light">
+                    Laminar airflow theatre with Allengers Digital C-Arm enabling real-time intraoperative visualization for minimally invasive rod insertion and accurate plate fixation.
+                  </p>
                 </div>
               </div>
             </div>

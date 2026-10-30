@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2, Shield, Calendar, MapPin, Award } from "lucide-react";
 import { siteData } from "@/data/site";
 
@@ -39,6 +40,36 @@ export default function AboutSection() {
                     <div className="text-xs text-white/70 mt-1">Multispeciality</div>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Real Facility Snapshot Pair */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative h-36 rounded-2xl overflow-hidden border border-line shadow-soft group">
+                <Image
+                  src="/images/facilities/modular-ot-carm.jpg"
+                  alt="Indira Hospital Modular OT with Digital C-Arm"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <span className="absolute bottom-2.5 left-3 right-3 text-[11px] font-bold uppercase tracking-wider text-white">
+                  Modular OT & C-Arm
+                </span>
+              </div>
+              <div className="relative h-36 rounded-2xl overflow-hidden border border-line shadow-soft group">
+                <Image
+                  src="/images/facilities/recovery-monitoring-ward.jpg"
+                  alt="Indira Hospital Post-Operative Recovery Ward"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <span className="absolute bottom-2.5 left-3 right-3 text-[11px] font-bold uppercase tracking-wider text-white">
+                  Recovery & Monitoring
+                </span>
               </div>
             </div>
 

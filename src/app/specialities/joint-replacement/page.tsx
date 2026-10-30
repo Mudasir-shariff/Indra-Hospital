@@ -4,13 +4,14 @@ import Footer from "@/components/Footer";
 import SubpageHero from "@/components/SubpageHero";
 import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
-import { CheckCircle2, Bone, Activity, ShieldCheck, HeartHandshake } from "lucide-react";
+import Image from "next/image";
+import { CheckCircle2, Bone, Activity, ShieldCheck, HeartHandshake, ArrowRight } from "lucide-react";
 
 import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata = buildMeta({
   title: "Joint Replacement in Chintamani | Indira Hospital",
-  description: "Total Knee Replacement (TKR) and Total Hip Replacement (THR) in Chintamani. Performed by senior surgeons in modular laminar airflow theatres.",
+  description: "Total Knee Replacement (TKR) and Total Hip Replacement (THR) in Chintamani. Performed by senior surgeons in modular laminar airflow theatres with in-house rehabilitation.",
   path: "/specialities/joint-replacement",
 });
 
@@ -137,6 +138,71 @@ export default function JointReplacementPage() {
                   >
                     Consult Joint Surgeon
                   </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Facility Spotlight: Modular OT & Physiotherapy */}
+          <div className="border-t border-line pt-16">
+            <div className="max-w-3xl mb-8">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0068B0] block mb-1">
+                Surgical & Recovery Infrastructure
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-charcoal">
+                Advanced Theatres & Immediate Rehabilitation
+              </h2>
+              <p className="text-sm text-muted mt-2 font-light">
+                Joint replacement success depends on zero infection rates and early post-operative mobilization. Here is where your surgery and recovery happen at Indira Hospital.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-3xl overflow-hidden border border-line shadow-soft group">
+                <div className="relative h-64 w-full overflow-hidden">
+                  <Image
+                    src="/images/facilities/modular-ot-carm.jpg"
+                    alt="Modular Operation Theatre with Digital C-Arm for Joint Replacement"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-[11px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded border border-white/20">
+                    Laminar Airflow Modular OT & C-Arm
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold font-heading text-charcoal mb-2">
+                    Laminar Airflow Modular Surgical Suite
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed font-light">
+                    Engineered with ultra-clean positive pressure laminar airflow, HEPA filtration, and Allengers Digital C-Arm for intraoperative prosthetic alignment and implant verification.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-3xl overflow-hidden border border-line shadow-soft group">
+                <div className="relative h-64 w-full overflow-hidden">
+                  <Image
+                    src="/images/facilities/physiotherapy-rehab.jpg"
+                    alt="Physiotherapy and Rehabilitation Centre with Motorized Traction Table"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-[11px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded border border-white/20">
+                    In-House Physiotherapy Centre
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold font-heading text-charcoal mb-2">
+                    Targeted Joint Mobilization & Rehab
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed font-light">
+                    Equipped with motorized traction therapy (MOBILUX-5 TRAC) and targeted electrotherapy, guided by dedicated physiotherapists from Day 1 post-surgery.
+                  </p>
                 </div>
               </div>
             </div>

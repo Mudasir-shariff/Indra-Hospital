@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SubpageHero from "@/components/SubpageHero";
@@ -265,6 +266,28 @@ export default function ContactPage() {
 
             {/* Right Column: Contact Details Cards */}
             <div className="lg:col-span-5 space-y-6">
+              
+              {/* Reception Photo Card */}
+              <div className="bg-white rounded-3xl overflow-hidden border border-line shadow-soft group">
+                <div className="relative h-56 w-full overflow-hidden">
+                  <Image
+                    src="/images/facilities/hospital-reception.jpg"
+                    alt="Indira Hospital Main Reception and Patient Helpdesk"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 text-white">
+                    <span className="inline-block text-[10px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md px-2.5 py-1 rounded border border-white/20 mb-1">
+                      Main Reception Desk
+                    </span>
+                    <p className="text-xs text-white/95 leading-tight font-medium">
+                      Walk-in OPD Registration, Patient Helpdesk & Inpatient Admissions
+                    </p>
+                  </div>
+                </div>
+              </div>
               
               {/* Emergency Banner */}
               <div className="p-6 rounded-3xl bg-red-50 border border-red-100 shadow-soft">

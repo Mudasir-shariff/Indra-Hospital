@@ -1,17 +1,18 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SubpageHero from "@/components/SubpageHero";
 import CtaSection from "@/components/CtaSection";
 import { orthopaedicDepartment } from "@/data/specialities";
-import { ArrowRight, CheckCircle2, Bone, Shield, Activity } from "lucide-react";
+import { ArrowRight, CheckCircle2, Bone, Shield, Activity, Sparkles } from "lucide-react";
 
 import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata = buildMeta({
   title: "Orthopaedic Surgeries in Chintamani | Indira Hospital",
-  description: "Comprehensive orthopaedic surgical care in Chintamani: Joint Replacement (TKR/THR), 24/7 Fracture Trauma, Arthroscopy, and Spine Surgery.",
+  description: "Comprehensive orthopaedic surgical care in Chintamani: Joint Replacement (TKR/THR), 24/7 Fracture Trauma, Arthroscopy, and Spine Surgery with in-house rehabilitation.",
   path: "/specialities/orthopaedics",
 });
 
@@ -96,6 +97,71 @@ export default function OrthopaedicsPage() {
                 >
                   Book Orthopaedic Consultation
                 </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Orthopaedic Infrastructure Showcase */}
+          <div className="border-t border-line pt-16 mb-16">
+            <div className="max-w-3xl mb-8">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0068B0] block mb-1">
+                Surgical & Recovery Facilities
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-charcoal">
+                Modular Operating Theatres & Active Rehabilitation
+              </h2>
+              <p className="text-sm text-muted mt-2 font-light">
+                Our orthopaedic centre is backed by ultra-clean modular theatres with intraoperative fluoroscopy and dedicated physiotherapy for accelerated healing.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-3xl overflow-hidden border border-line shadow-soft group">
+                <div className="relative h-64 w-full overflow-hidden">
+                  <Image
+                    src="/images/facilities/modular-ot-carm.jpg"
+                    alt="Modular Operation Theatre with Digital C-Arm for Orthopaedic Surgeries"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-[11px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded border border-white/20">
+                    Modular OT 1 & Digital C-Arm
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold font-heading text-charcoal mb-2">
+                    Laminar Airflow Theatre & C-Arm System
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed font-light">
+                    Equipped with laminar air flow, HEPA filters, and Allengers Digital C-Arm imaging for precise intraoperative fracture fixation, implant positioning, and spine alignment.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-3xl overflow-hidden border border-line shadow-soft group">
+                <div className="relative h-64 w-full overflow-hidden">
+                  <Image
+                    src="/images/facilities/physiotherapy-rehab.jpg"
+                    alt="Physiotherapy and Rehabilitation Centre at Indira Hospital"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-[11px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded border border-white/20">
+                    Physiotherapy & Rehab Unit
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold font-heading text-charcoal mb-2">
+                    Computerized Traction & Joint Rehabilitation
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed font-light">
+                    Features MOBILUX-5 TRAC computerized spinal and cervical traction, electrotherapy, and individualized muscle strengthening protocols under expert physiotherapists.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

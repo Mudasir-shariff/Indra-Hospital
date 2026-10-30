@@ -68,7 +68,7 @@ export default function InsurancePage() {
             </div>
 
             {/* Officer Contact Box */}
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-5 space-y-6">
               <div className="bg-white rounded-3xl p-8 border border-line shadow-soft space-y-6">
               {insuranceData.executive.image ? (
                 <div className="w-32 h-32 rounded-2xl overflow-hidden border border-blue-100">
@@ -115,6 +115,28 @@ export default function InsurancePage() {
                 <p className="text-xs text-muted leading-relaxed font-light">
                   Please call prior to your planned hospitalization date to verify cashless coverage and avoid admission delays.
                 </p>
+              </div>
+
+              {/* Cashless Desk Reception Photo Card */}
+              <div className="bg-white rounded-3xl overflow-hidden border border-line shadow-soft group">
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image
+                    src="/images/facilities/hospital-reception.jpg"
+                    alt="Indira Hospital Main Reception and Cashless Desk"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 text-white">
+                    <span className="inline-block text-[10px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md px-2.5 py-0.5 rounded border border-white/20 mb-1">
+                      On-Site Cashless Desk
+                    </span>
+                    <p className="text-xs text-white/95 leading-tight font-medium">
+                      Direct coordination at our Main Reception Desk for seamless TPA approvals
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
