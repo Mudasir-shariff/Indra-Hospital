@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { siteData } from "@/data/site";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Mail } from "lucide-react";
 import { InstagramIcon, FacebookIcon } from "./SocialIcons";
 
 export default function Footer() {
@@ -17,8 +17,9 @@ export default function Footer() {
               <div className="relative w-10 h-10 rounded-full overflow-hidden border border-line bg-white flex-shrink-0">
                 <Image
                   src="/brand/indira-logo.jpg"
-                  alt="Indira Hospital"
+                  alt="Indira Hospital Chintamani Logo"
                   fill
+                  sizes="40px"
                   className="object-cover"
                 />
               </div>
@@ -187,6 +188,8 @@ export default function Footer() {
             <Link href="/privacy" className="hover:text-[#0068B0] transition-colors">Privacy Policy</Link>
             <span>•</span>
             <Link href="/terms" className="hover:text-[#0068B0] transition-colors">Terms of Service</Link>
+            <span>•</span>
+            <Link href="/sitemap.xml" className="hover:text-[#0068B0] transition-colors">Sitemap</Link>
           </div>
         </div>
       </div>

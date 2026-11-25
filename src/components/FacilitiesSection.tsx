@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, CheckCircle2, ShieldCheck, Microscope, HeartPulse, Building } from "lucide-react";
+import { ArrowRight, Building } from "lucide-react";
 import { facilitiesData, facilityPhotos } from "@/data/facilities";
 
 export default function FacilitiesSection() {

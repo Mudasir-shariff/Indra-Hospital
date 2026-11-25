@@ -1,18 +1,20 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SubpageHero from "@/components/SubpageHero";
 import CtaSection from "@/components/CtaSection";
 import { facilitiesData, facilityPhotos } from "@/data/facilities";
-import { CheckCircle2, ShieldCheck, Microscope, HeartPulse, Sparkles, Camera } from "lucide-react";
+import { CheckCircle2, Camera } from "lucide-react";
 
-import { buildMeta, getBreadcrumbJsonLd } from "@/lib/seo";
+import { buildMeta, getBreadcrumbJsonLd, getWebPageJsonLd } from "@/lib/seo";
+
+const facilitiesTitle = "Hospital Facilities & Modular OTs in Chintamani | Indira Hospital";
+const facilitiesDesc = "30-bed hospital in Chintamani with 2 modular OTs, digital C-Arm, 24/7 digital X-ray, recovery ward, in-house pharmacy, and physiotherapy.";
 
 export const metadata = buildMeta({
-  title: "Facilities & Infrastructure | Indira Hospital, Chintamani",
-  description: "Explore Indira Hospital's 30-bed surgical infrastructure: 2 modular OTs with laminar airflow, digital C-Arms, 24/7 digital X-ray, 24/7 pharmacy, post-op recovery & rehabilitation centre.",
+  title: facilitiesTitle,
+  description: facilitiesDesc,
   path: "/facilities",
 });
 
@@ -20,12 +22,21 @@ export default function FacilitiesPage() {
   const breadcrumbJsonLd = getBreadcrumbJsonLd([
     { name: "Facilities", path: "/facilities" },
   ]);
+  const webPageJsonLd = getWebPageJsonLd({
+    name: facilitiesTitle,
+    description: facilitiesDesc,
+    path: "/facilities",
+  });
 
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
       />
       <Navbar isHeroFloating={false} />
 

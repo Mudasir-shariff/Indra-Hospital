@@ -13,23 +13,40 @@ import InsuranceSection from "@/components/InsuranceSection";
 import CtaSection from "@/components/CtaSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import { buildMeta, getHospitalJsonLd } from "@/lib/seo";
+import { buildMeta, getHospitalJsonLd, getWebSiteJsonLd, getWebPageJsonLd } from "@/lib/seo";
+
+const homeTitle = "Indira Hospital Chintamani | Multispeciality & Orthopaedic Hospital";
+const homeDescription = "Leading 30-bed hospital in Chintamani offering daily OPD in Orthopaedics, Urology & General Medicine, modular OTs, C-Arm, and 24/7 trauma care.";
 
 export const metadata: Metadata = buildMeta({
-  title: "INDIRA HOSPITAL | Super Speciality & Multispeciality Hospital, Chintamani",
-  description: "Leading 30-bed Super Speciality & Multispeciality Hospital in Chintamani, Karnataka. Daily OPD for Orthopaedics, Urology, and General Medicine, with advanced modular OTs and appointment-based specialist care.",
+  title: homeTitle,
+  description: homeDescription,
   path: "/",
 });
 
 export default function HomePage() {
-  const jsonLd = getHospitalJsonLd();
+  const hospitalJsonLd = getHospitalJsonLd();
+  const webSiteJsonLd = getWebSiteJsonLd();
+  const webPageJsonLd = getWebPageJsonLd({
+    name: homeTitle,
+    description: homeDescription,
+    path: "/",
+  });
 
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
-      {/* Schema.org Hospital + MedicalBusiness JSON-LD */}
+      {/* Schema.org Hospital + MedicalOrganization + WebSite + WebPage JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(hospitalJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
       />
       <Navbar isHeroFloating={true} />
       <Hero />

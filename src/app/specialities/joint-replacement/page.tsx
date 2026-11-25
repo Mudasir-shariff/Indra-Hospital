@@ -5,13 +5,31 @@ import SubpageHero from "@/components/SubpageHero";
 import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
 import Image from "next/image";
-import { CheckCircle2, Bone, Activity, ShieldCheck, HeartHandshake, ArrowRight } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
-import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
+import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd, getFaqJsonLd } from "@/lib/seo";
+
+const jointFaqs = [
+  {
+    question: "What is joint replacement surgery and when is it considered?",
+    answer:
+      "Joint replacement (arthroplasty) is a surgical procedure in which severely worn or damaged surfaces of a joint—most commonly the knee or hip—are resurfaced with medical-grade implants. Orthopaedic surgeons generally consider it when advanced arthritis or joint damage causes chronic pain and limits daily walking or sleep despite medicines and physiotherapy.",
+  },
+  {
+    question: "What are the common causes of severe knee pain requiring evaluation?",
+    answer:
+      "Severe knee pain is frequently linked to osteoarthritis (gradual cartilage wear), rheumatoid or inflammatory arthritis, untreated meniscus or ligament injuries, or post-traumatic joint damage after an earlier fracture. Weight-bearing X-rays and clinical assessment help determine the stage and appropriate treatment.",
+  },
+  {
+    question: "What does post-operative physiotherapy involve after knee or hip replacement?",
+    answer:
+      "Guided rehabilitation usually begins within the first day after surgery under a physiotherapist's supervision. Exercises focus on gentle ankle and knee movement, safe standing and assisted walking, and gradual strengthening of surrounding muscles to support daily mobility.",
+  },
+];
 
 export const metadata = buildMeta({
-  title: "Joint Replacement in Chintamani | Indira Hospital",
-  description: "Total Knee Replacement (TKR) and Total Hip Replacement (THR) in Chintamani. Performed by senior surgeons in modular laminar airflow theatres with in-house rehabilitation.",
+  title: "Joint Replacement Hospital in Chintamani | Indira Hospital",
+  description: "Total knee replacement (TKR) and hip replacement (THR) at Indira Hospital, Chintamani. Laminar airflow modular OTs and in-house physiotherapy.",
   path: "/specialities/joint-replacement",
 });
 
@@ -47,6 +65,8 @@ export default function JointReplacementPage() {
     { name: "Joint Replacement", path: "/specialities/joint-replacement" },
   ]);
 
+  const faqJsonLd = getFaqJsonLd(jointFaqs);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
       <script
@@ -56,6 +76,10 @@ export default function JointReplacementPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Navbar isHeroFloating={false} />
 
@@ -205,6 +229,34 @@ export default function JointReplacementPage() {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Understanding Joint Replacement FAQs */}
+          <div className="border-t border-line pt-16 mt-16">
+            <div className="max-w-3xl mb-8">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0068B0] block mb-1">
+                Patient Guide
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-charcoal">
+                Understanding Joint Replacement & Knee Pain
+              </h2>
+              <p className="text-sm text-muted mt-2 font-light">
+                Informational answers for patients evaluating knee or hip surgery. Every surgical recommendation depends on clinical examination by an orthopaedic specialist.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {jointFaqs.map((faq) => (
+                <div key={faq.question} className="bg-white rounded-2xl p-6 border border-line shadow-soft">
+                  <h3 className="text-base font-bold font-heading text-charcoal mb-2">
+                    {faq.question}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed font-light">
+                    {faq.answer}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 

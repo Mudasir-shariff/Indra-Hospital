@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, UserCheck, Stethoscope, Award, Calendar } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import { doctorsData, visitingSpecialists } from "@/data/doctors";
 
 export default function DoctorsSection() {
@@ -48,7 +48,7 @@ export default function DoctorsSection() {
                   {doc.image ? (
                     <Image
                       src={doc.image}
-                      alt={doc.name}
+                      alt={`${doc.name} — ${doc.title} at Indira Hospital, Chintamani`}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 380px"
                       className="object-cover object-top group-hover:scale-105 transition-transform duration-300"

@@ -6,13 +6,38 @@ import Footer from "@/components/Footer";
 import SubpageHero from "@/components/SubpageHero";
 import CtaSection from "@/components/CtaSection";
 import { orthopaedicDepartment } from "@/data/specialities";
-import { ArrowRight, CheckCircle2, Bone, Shield, Activity, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
-import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
+import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd, getFaqJsonLd } from "@/lib/seo";
+
+const orthoSubPages = new Set([
+  "joint-replacement",
+  "trauma-fracture",
+  "arthroscopy",
+  "spine-surgery",
+]);
+
+const orthoFaqs = [
+  {
+    question: "When should you consult an orthopaedic doctor?",
+    answer:
+      "You should consult an orthopaedic doctor if you experience persistent joint, back, or neck pain lasting more than a few days, difficulty bearing weight or walking, joint swelling or stiffness, reduced range of motion, tingling or numbness in your limbs, or any suspected bone fracture or sports injury. Early clinical evaluation helps identify whether conservative care such as medication and physiotherapy can resolve the issue.",
+  },
+  {
+    question: "What are the common causes of knee pain?",
+    answer:
+      "Common causes of knee pain include age-related wear and tear of cartilage (osteoarthritis), meniscus cartilage tears, ligament injuries such as ACL or PCL sprains from twisting injuries, patellar tracking issues, inflammatory joint conditions, and post-traumatic stiffness after an old fracture. A physical examination supported by digital X-ray helps determine the exact cause.",
+  },
+  {
+    question: "Do all orthopaedic and joint problems require surgery?",
+    answer:
+      "No. Many musculoskeletal conditions improve with non-surgical care including rest, targeted medication, bracing, lifestyle modification, and guided physiotherapy. Surgical options such as arthroscopy or joint replacement are recommended only when diagnostic imaging and clinical evaluation show that conservative treatment is unlikely to restore comfortable function.",
+  },
+];
 
 export const metadata = buildMeta({
-  title: "Orthopaedic Surgeries in Chintamani | Indira Hospital",
-  description: "Comprehensive orthopaedic surgical care in Chintamani: Joint Replacement (TKR/THR), 24/7 Fracture Trauma, Arthroscopy, and Spine Surgery with in-house rehabilitation.",
+  title: "Orthopaedic Hospital in Chintamani | Indira Hospital",
+  description: "Trusted orthopaedic hospital in Chintamani for joint replacement, 24/7 fracture care, arthroscopy, and spine surgery with modular OTs and digital C-Arm.",
   path: "/specialities/orthopaedics",
 });
 
@@ -29,6 +54,8 @@ export default function OrthopaedicsPage() {
     { name: "Orthopaedics", path: "/specialities/orthopaedics" },
   ]);
 
+  const faqJsonLd = getFaqJsonLd(orthoFaqs);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
       <script
@@ -38,6 +65,10 @@ export default function OrthopaedicsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Navbar isHeroFloating={false} />
 
@@ -206,13 +237,41 @@ export default function OrthopaedicsPage() {
 
                   <div className="pt-6 mt-4 border-t border-line/50">
                     <Link
-                      href={`/specialities/${sub.slug}`}
+                      href={orthoSubPages.has(sub.slug) ? `/specialities/${sub.slug}` : "/contact"}
                       className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0068B0] hover:text-[#C03A21] transition-colors"
                     >
-                      <span>Explore this discipline</span>
+                      <span>{orthoSubPages.has(sub.slug) ? "Explore this discipline" : "Consult Orthopaedic Specialist"}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Patient Guidance & FAQs */}
+          <div className="border-t border-line pt-16 mt-16">
+            <div className="max-w-3xl mb-8">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0068B0] block mb-1">
+                Patient Education
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-charcoal">
+                Orthopaedic Care Guidance & Frequently Asked Questions
+              </h2>
+              <p className="text-sm text-muted mt-2 font-light">
+                General medical information for patients in Chintamani and surrounding areas. Please consult a qualified orthopaedic surgeon for individual diagnosis and treatment advice.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {orthoFaqs.map((faq) => (
+                <div key={faq.question} className="bg-white rounded-2xl p-6 border border-line shadow-soft">
+                  <h3 className="text-base font-bold font-heading text-charcoal mb-2">
+                    {faq.question}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed font-light">
+                    {faq.answer}
+                  </p>
                 </div>
               ))}
             </div>

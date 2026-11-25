@@ -6,14 +6,17 @@ import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
 import Image from "next/image";
 import { doctorsData, visitingSpecialists } from "@/data/doctors";
-import { Stethoscope, Award, CheckCircle2, Calendar, Phone } from "lucide-react";
+import { Stethoscope, CheckCircle2, Calendar, Phone } from "lucide-react";
 import { siteData } from "@/data/site";
 
-import { buildMeta, getDoctorListJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
+import { buildMeta, getDoctorListJsonLd, getBreadcrumbJsonLd, getWebPageJsonLd } from "@/lib/seo";
+
+const doctorsTitle = "Orthopaedic & Specialist Doctors in Chintamani | Indira Hospital";
+const doctorsDesc = "Consult experienced orthopaedic surgeons, urologists, gynaecologists, and visiting specialists at Indira Hospital, Chintamani.";
 
 export const metadata = buildMeta({
-  title: "Our Doctors & Specialists | Indira Hospital, Chintamani",
-  description: "Meet our specialist doctors in Chintamani: expert orthopaedic surgeons, urologists, gynaecologists, and maxillofacial surgeons.",
+  title: doctorsTitle,
+  description: doctorsDesc,
   path: "/doctors",
 });
 
@@ -24,6 +27,12 @@ export default function DoctorsPage() {
   const breadcrumbJsonLd = getBreadcrumbJsonLd([
     { name: "Doctors", path: "/doctors" },
   ]);
+  const webPageJsonLd = getWebPageJsonLd({
+    name: doctorsTitle,
+    description: doctorsDesc,
+    path: "/doctors",
+    type: "CollectionPage",
+  });
 
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
@@ -35,18 +44,22 @@ export default function DoctorsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
       <Navbar isHeroFloating={false} />
 
       <SubpageHero
         category="Clinical Team"
-        title="Our Doctors & Specialists"
-        subtitle="Experienced surgeons and clinicians committed to delivering advanced, ethical, and patient-centred healthcare through evidence-based medical practices."
+        title="Our Doctors & Specialists in Chintamani"
+        subtitle="Experienced orthopaedic surgeons, urologists, and multispeciality consultants delivering ethical, evidence-based healthcare for Chintamani and surrounding areas."
         breadcrumbs={[{ label: "Home", href: "/" }]}
       />
 
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
-          
+
           {/* Senior Consultants Section */}
           <div>
             <div className="mb-10">
@@ -69,7 +82,7 @@ export default function DoctorsPage() {
                     {doc.image ? (
                       <Image
                         src={doc.image}
-                        alt={doc.name}
+                        alt={`${doc.name} — ${doc.title} at Indira Hospital, Chintamani`}
                         fill
                         sizes="(max-width: 640px) 100vw, 256px"
                         className="object-cover object-top group-hover:scale-102 transition-transform duration-300"

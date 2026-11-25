@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { siteData } from "@/data/site";
-import { QrCode, ExternalLink, Copy, Check, Camera, ShieldCheck, Sparkles, Smartphone } from "lucide-react";
+import { ExternalLink, Copy, Check, Camera, ShieldCheck, Sparkles, Smartphone } from "lucide-react";
 import dynamic from "next/dynamic";
 const QrCameraScanner = dynamic(() => import("./QrCameraScanner"), { ssr: false });
 
@@ -60,9 +60,9 @@ export default function QrBookingCard({ variant = "card", className = "" }: QrBo
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#0068B0] block mb-0.5">
               Online Appointment Portal
             </span>
-            <h4 className="text-sm font-bold text-charcoal truncate">
+            <h3 className="text-sm font-bold text-charcoal truncate">
               Scan QR Code to Book Online
-            </h4>
+            </h3>
             <p className="text-xs text-muted mt-0.5 font-light line-clamp-2">
               Instant appointment confirmation on TatvaCare portal.
             </p>

@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, CheckCircle2, Shield, Calendar, MapPin, Award } from "lucide-react";
-import { siteData } from "@/data/site";
+import { ArrowRight, Calendar } from "lucide-react";
 
 export default function AboutSection() {
   return (

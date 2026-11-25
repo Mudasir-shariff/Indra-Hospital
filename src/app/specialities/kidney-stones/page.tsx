@@ -9,8 +9,8 @@ import { CheckCircle2, Droplets, Zap, ShieldCheck } from "lucide-react";
 import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata = buildMeta({
-  title: "Kidney Stone Laser Surgery in Chintamani | Indira Hospital",
-  description: "Advanced laser kidney stone surgery in Chintamani: RIRS scarless laser treatment, PCNL, Mini-PCNL & URS with fast recovery and high clearance.",
+  title: "Kidney Stone Laser Treatment in Chintamani | Indira Hospital",
+  description: "Scarless Holmium laser kidney stone treatment (RIRS, PCNL, URS) at Indira Hospital, Chintamani for fast recovery and stone clearance.",
   path: "/specialities/kidney-stones",
 });
 

@@ -23,22 +23,19 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "INDIRA HOSPITAL — Super Speciality & Multispeciality Hospital | Chintamani",
-  description: "Leading 30-bed Super Speciality & Multispeciality Hospital in Chintamani, Karnataka. Daily OPD in Orthopaedics, Urology, and General Medicine. Advanced modular operation theatres, digital C-Arm imaging, 24/7 emergency trauma care.",
+  title: "Indira Hospital, Chintamani | Super Speciality & Multispeciality Hospital",
+  description: "Leading 30-bed Super Speciality & Multispeciality Hospital in Chintamani, Karnataka. Daily OPD in Orthopaedics, Urology, and General Medicine with 24/7 emergency trauma care.",
   keywords: [
+    "Hospital in Chintamani",
+    "Best hospital in Chintamani",
     "Indira Hospital Chintamani",
-    "Super Speciality Hospital Chintamani",
-    "Multispeciality Hospital Chintamani",
-    "Daily OPD Chintamani",
-    "Orthopaedic Hospital Chintamani",
+    "Orthopaedic hospital in Chintamani",
+    "Joint replacement hospital in Chintamani",
+    "Fracture treatment in Chintamani",
     "Urology Hospital Karnataka",
-    "General Medicine OPD Chintamani",
-    "Nephrology Chintamani",
-    "Dermatology Chintamani",
-    "Kidney Stone Laser Surgery Chintamani",
+    "Daily OPD Chintamani",
     "Dr Venkatesh KR",
-    "Dr Shashank KA",
-    "Fracture Care 24/7"
+    "Dr Shashank KA"
   ],
   icons: {
     icon: [
@@ -56,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${manrope.variable} h-full antialiased scroll-smooth`}>
+    <html lang="en-IN" className={`${inter.variable} ${manrope.variable} h-full antialiased scroll-smooth`}>
       <head>
         <link rel="icon" href="/brand/indira-logo.jpg" type="image/jpeg" />
         <link rel="shortcut icon" href="/brand/indira-logo.jpg" type="image/jpeg" />

@@ -5,13 +5,16 @@ import SubpageHero from "@/components/SubpageHero";
 import CtaSection from "@/components/CtaSection";
 import Image from "next/image";
 import { insuranceData } from "@/data/insurance";
-import { ShieldCheck, Phone, CheckCircle2, FileText, ArrowRight } from "lucide-react";
+import { ShieldCheck, Phone, CheckCircle2, FileText } from "lucide-react";
 
-import { buildMeta, getBreadcrumbJsonLd } from "@/lib/seo";
+import { buildMeta, getBreadcrumbJsonLd, getWebPageJsonLd } from "@/lib/seo";
+
+const insuranceTitle = "Cashless Health Insurance & TPA | Indira Hospital, Chintamani";
+const insuranceDesc = "Cashless hospitalization and TPA insurance assistance for orthopaedic and urology surgeries at Indira Hospital, Chintamani.";
 
 export const metadata = buildMeta({
-  title: "Insurance & Cashless TPA | Indira Hospital, Chintamani",
-  description: "Cashless mediclaim & TPA insurance services for orthopaedic and urology surgeries at Indira Hospital Chintamani. Dedicated insurance desk: +91 99805 65420.",
+  title: insuranceTitle,
+  description: insuranceDesc,
   path: "/insurance",
 });
 
@@ -19,12 +22,21 @@ export default function InsurancePage() {
   const breadcrumbJsonLd = getBreadcrumbJsonLd([
     { name: "Insurance & TPA", path: "/insurance" },
   ]);
+  const webPageJsonLd = getWebPageJsonLd({
+    name: insuranceTitle,
+    description: insuranceDesc,
+    path: "/insurance",
+  });
 
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
       />
       <Navbar isHeroFloating={false} />
 

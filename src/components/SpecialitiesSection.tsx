@@ -16,8 +16,7 @@ import {
   Clock,
   CalendarCheck,
   Calendar,
-  CheckCircle2,
-  PhoneCall
+  CheckCircle2
 } from "lucide-react";
 import { allHospitalSpecialities } from "@/data/specialities";
 import AppointmentModal from "./AppointmentModal";
@@ -357,9 +356,9 @@ export default function SpecialitiesSection() {
                   Daily OPD Available
                 </span>
               </div>
-              <h4 className="text-xl font-bold font-heading text-charcoal mt-1 group-hover:text-[#0068B0] transition-colors">
+              <h3 className="text-xl font-bold font-heading text-charcoal mt-1 group-hover:text-[#0068B0] transition-colors">
                 Orthopaedic Surgeries & Sub-Specialities
-              </h4>
+              </h3>
               <p className="text-xs sm:text-sm text-muted mt-1">
                 Joint replacement, 24/7 fracture trauma, keyhole arthroscopy, spine care & physiotherapy.
               </p>
@@ -382,9 +381,9 @@ export default function SpecialitiesSection() {
                   Daily OPD Available
                 </span>
               </div>
-              <h4 className="text-xl font-bold font-heading text-charcoal mt-1 group-hover:text-[#0068B0] transition-colors">
+              <h3 className="text-xl font-bold font-heading text-charcoal mt-1 group-hover:text-[#0068B0] transition-colors">
                 Urology Surgeries & Laser Stone Clinic
-              </h4>
+              </h3>
               <p className="text-xs sm:text-sm text-muted mt-1">
                 Laser kidney stone treatments (RIRS / PCNL), prostate surgeries, endourology & andrology.
               </p>

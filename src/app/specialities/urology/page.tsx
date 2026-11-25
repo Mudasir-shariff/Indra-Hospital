@@ -6,13 +6,13 @@ import Footer from "@/components/Footer";
 import SubpageHero from "@/components/SubpageHero";
 import CtaSection from "@/components/CtaSection";
 import { urologyDepartment } from "@/data/specialities";
-import { ArrowRight, CheckCircle2, Droplets, Activity, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata = buildMeta({
-  title: "Urology Surgeries in Chintamani | Indira Hospital",
-  description: "Advanced urology hospital in Chintamani: Holmium laser kidney stone surgery (RIRS/PCNL), prostate surgery (TURP), uro-oncology & pediatric urology.",
+  title: "Urology Hospital & Daily OPD in Chintamani | Indira Hospital",
+  description: "Advanced urology care in Chintamani: laser kidney stone surgery (RIRS, PCNL), prostate surgery (TURP), and daily specialist OPD.",
   path: "/specialities/urology",
 });
 

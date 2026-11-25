@@ -9,8 +9,8 @@ import { CheckCircle2, Layers, ShieldCheck } from "lucide-react";
 import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata = buildMeta({
-  title: "Spine Surgery in Chintamani | Indira Hospital",
-  description: "Specialist spine surgery in Chintamani: microdiscectomy, decompression, fusion & pedicle fixation for sciatica and disc herniation.",
+  title: "Spine Surgery Hospital in Chintamani | Indira Hospital",
+  description: "Spine surgery in Chintamani for slip disc, sciatica, microdiscectomy, and spinal decompression with C-Arm guidance at Indira Hospital.",
   path: "/specialities/spine-surgery",
 });
 

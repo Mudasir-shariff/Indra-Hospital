@@ -9,8 +9,8 @@ import { CheckCircle2, Activity, ShieldCheck } from "lucide-react";
 import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata = buildMeta({
-  title: "Prostate Surgery in Chintamani | Indira Hospital",
-  description: "Expert prostate surgery in Chintamani: TURP, HoLEP laser enucleation & BPH care for enlarged prostate and urinary obstruction with rapid recovery.",
+  title: "Prostate Surgery (TURP & HoLEP) in Chintamani | Indira Hospital",
+  description: "Expert enlarged prostate (BPH) treatment in Chintamani using TURP and HoLEP laser surgery at Indira Hospital.",
   path: "/specialities/prostate-surgery",
 });
 
@@ -70,7 +70,7 @@ export default function ProstateSurgeryPage() {
 
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
             <div className="lg:col-span-8 space-y-6">
               <h2 className="text-2xl sm:text-3xl font-bold font-heading text-charcoal tracking-tight">

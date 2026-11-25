@@ -1,5 +1,5 @@
 import React from "react";
-import { MapPin, Phone, Mail, Clock, Activity, Navigation, ArrowUpRight } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Navigation, ArrowUpRight } from "lucide-react";
 import { siteData } from "@/data/site";
 import QrBookingCard from "./QrBookingCard";
 
@@ -15,7 +15,7 @@ export default function ContactSection() {
             Location & Contact
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-charcoal tracking-tight">
-            We're Here to Help You
+            We&apos;re Here to Help You
           </h2>
           <p className="text-muted text-sm sm:text-base mt-2 font-light">
             Conveniently situated in the heart of Chintamani with comprehensive OPD consultations and 24/7 trauma emergency care.

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Phone, ShieldCheck, Heart, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import AppointmentModal from "./AppointmentModal";
 
 export default function Hero() {
@@ -19,9 +19,10 @@ export default function Hero() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/indira-hospital-building.jpg"
-            alt="INDIRA HOSPITAL — Super Speciality & Multispeciality Hospital Building, Chintamani"
+            alt="Indira Hospital — Super Speciality & Multispeciality Hospital Building in Chintamani, Karnataka"
             fill
             priority
+            sizes="(max-width: 1400px) 100vw, 1400px"
             className="object-cover object-[center_35%] lg:object-[center_28%]"
           />
         </div>
@@ -43,8 +44,9 @@ export default function Hero() {
                 <div className="relative w-7 h-7 rounded-full border-2 border-white bg-white overflow-hidden shadow-sm flex-shrink-0">
                   <Image
                     src="/brand/indira-logo.jpg"
-                    alt="Indira Logo"
+                    alt="Indira Hospital Chintamani Logo"
                     fill
+                    sizes="28px"
                     className="object-cover"
                   />
                 </div>
@@ -63,8 +65,8 @@ export default function Hero() {
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading text-white tracking-tight leading-[1.08] mb-6 drop-shadow-sm">
               Your Trusted <br />
-              Partner in Modern <br />
-              Healthcare
+              Hospital in <br />
+              Chintamani
             </h1>
 
             {/* Sub-headline / Action Row */}
@@ -96,9 +98,9 @@ export default function Hero() {
             {/* Bottom-Left: "Comprehensive Care" info block */}
             <div className="lg:col-span-5 max-w-md">
               <div className="text-white">
-                <h3 className="text-xl sm:text-2xl font-bold font-heading mb-2 flex items-center gap-2">
-                  <span>Comprehensive Care</span>
-                </h3>
+                <h2 className="text-xl sm:text-2xl font-bold font-heading mb-2 flex items-center gap-2">
+                  <span>Comprehensive Healthcare Services in Chintamani</span>
+                </h2>
                 <p className="text-sm sm:text-base text-white/85 leading-relaxed font-light">
                   Accessible, modern superspeciality medical care — where advanced modular surgical technology meets clinical compassion. Book consultations, access 24/7 casualty trauma care, and regain active pain-free mobility.
                 </p>

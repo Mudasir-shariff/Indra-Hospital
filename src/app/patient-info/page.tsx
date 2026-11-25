@@ -7,22 +7,23 @@ import CtaSection from "@/components/CtaSection";
 import { patientInfoData } from "@/data/patientInfo";
 import { 
   Clock, 
-  Calendar, 
   CheckCircle2, 
   FileText, 
   Users, 
   ShieldCheck, 
   AlertCircle,
-  Building2,
-  Activity
+  Building2
 } from "lucide-react";
 
-import { buildMeta, getBreadcrumbJsonLd } from "@/lib/seo";
+import { buildMeta, getBreadcrumbJsonLd, getWebPageJsonLd } from "@/lib/seo";
 import QrBookingCard from "@/components/QrBookingCard";
 
+const patientInfoTitle = "OPD Timings & Patient Guide | Indira Hospital, Chintamani";
+const patientInfoDesc = "Daily OPD timings, visiting hours, admission steps, and inpatient ward guide at Indira Hospital, Chintamani. 24/7 casualty available.";
+
 export const metadata = buildMeta({
-  title: "OPD Timings & Patient Guide | Indira Hospital, Chintamani",
-  description: "Patient guide & OPD consultation timings at Indira Hospital Chintamani: morning & evening specialist clinics, visiting hours, admission process & rights.",
+  title: patientInfoTitle,
+  description: patientInfoDesc,
   path: "/patient-info",
 });
 
@@ -30,12 +31,21 @@ export default function PatientInfoPage() {
   const breadcrumbJsonLd = getBreadcrumbJsonLd([
     { name: "Patient Guide", path: "/patient-info" },
   ]);
+  const webPageJsonLd = getWebPageJsonLd({
+    name: patientInfoTitle,
+    description: patientInfoDesc,
+    path: "/patient-info",
+  });
 
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
       />
       <Navbar isHeroFloating={false} />
 

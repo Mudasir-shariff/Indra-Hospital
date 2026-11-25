@@ -1,9 +1,12 @@
 import { Metadata } from "next";
-import { buildMeta, getBreadcrumbJsonLd } from "@/lib/seo";
+import { buildMeta, getBreadcrumbJsonLd, getWebPageJsonLd } from "@/lib/seo";
+
+const contactTitle = "Contact Indira Hospital Chintamani | Phone, Address & OPD";
+const contactDesc = "Visit Indira Hospital near Municipal Park, N.R. Extension, Chintamani. Call +91 79961 14271 (OPD) or 08154-405616 (24/7 emergency).";
 
 export const metadata: Metadata = buildMeta({
-  title: "Contact Indira Hospital, Chintamani | Address & Phone",
-  description: "Contact Indira Hospital in Chintamani: Ram Mandir Road, N.R. Extension. Call +91 79961 14271 (OPD) or 08154-405616 (24/7 Casualty). WhatsApp booking available.",
+  title: contactTitle,
+  description: contactDesc,
   path: "/contact",
 });
 
@@ -15,12 +18,22 @@ export default function ContactLayout({
   const breadcrumbJsonLd = getBreadcrumbJsonLd([
     { name: "Contact", path: "/contact" },
   ]);
+  const webPageJsonLd = getWebPageJsonLd({
+    name: contactTitle,
+    description: contactDesc,
+    path: "/contact",
+    type: "ContactPage",
+  });
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
       />
       {children}
     </>

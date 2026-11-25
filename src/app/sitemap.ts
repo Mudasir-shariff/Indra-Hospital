@@ -1,6 +1,10 @@
 import { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
 
+export const dynamic = "force-static";
+
+const LAST_MODIFIED = new Date("2026-11-25");
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     { path: "", priority: 1.0, changeFrequency: "daily" as const },
@@ -22,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return routes.map((route) => ({
     url: `${SITE_URL}${route.path}`,
-    lastModified: new Date(),
+    lastModified: LAST_MODIFIED,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
   }));

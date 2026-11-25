@@ -40,9 +40,9 @@ export default function TrustStrip() {
                   <Icon className="w-6 h-6 stroke-[1.75]" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold font-heading text-charcoal">
+                  <h2 className="text-base font-bold font-heading text-charcoal">
                     {item.title}
-                  </h4>
+                  </h2>
                   <p className="text-xs sm:text-sm text-muted mt-0.5 leading-snug">
                     {item.desc}
                   </p>

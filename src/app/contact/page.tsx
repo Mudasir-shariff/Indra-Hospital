@@ -6,18 +6,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SubpageHero from "@/components/SubpageHero";
 import { siteData } from "@/data/site";
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  Activity, 
-  Navigation, 
-  MessageSquare, 
-  User, 
-  Calendar, 
-  Stethoscope, 
-  ShieldCheck, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Activity,
+  Navigation,
+  MessageSquare,
+  User,
+  Calendar,
+  Stethoscope,
+  ShieldCheck,
   ArrowUpRight,
   QrCode
 } from "lucide-react";
@@ -56,7 +56,7 @@ export default function ContactPage() {
 
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Official 4-Way Appointment Options from website info */}
           <div className="mb-14">
             <div className="max-w-2xl mb-8">
@@ -75,7 +75,7 @@ export default function ContactPage() {
               <div className="p-5 rounded-2xl bg-white border border-line shadow-soft flex flex-col justify-between">
                 <div>
                   <span className="text-[11px] font-bold text-[#0068B0] uppercase tracking-wider">Method 01</span>
-                  <h4 className="text-sm font-bold text-charcoal mt-1 mb-1">Call Reception</h4>
+                  <h3 className="text-sm font-bold text-charcoal mt-1 mb-1">Call Reception</h3>
                   <p className="text-xs text-muted leading-relaxed">During OPD hours (10:30 AM – 3:00 PM & 5:30 PM – 8:30 PM).</p>
                 </div>
                 <a href={`tel:${siteData.contact.phone}`} className="text-xs font-bold text-[#0068B0] mt-3 hover:underline">
@@ -86,7 +86,7 @@ export default function ContactPage() {
               <div className="p-5 rounded-2xl bg-white border border-line shadow-soft flex flex-col justify-between">
                 <div>
                   <span className="text-[11px] font-bold text-[#0068B0] uppercase tracking-wider">Method 02</span>
-                  <h4 className="text-sm font-bold text-charcoal mt-1 mb-1">Visit Reception</h4>
+                  <h3 className="text-sm font-bold text-charcoal mt-1 mb-1">Visit Reception</h3>
                   <p className="text-xs text-muted leading-relaxed">Near Park, N.R. Extension, Ram Mandir Road, Chintamani.</p>
                 </div>
                 <span className="text-xs font-semibold text-charcoal/80 mt-3">Walk-in OPD Available</span>
@@ -95,7 +95,7 @@ export default function ContactPage() {
               <div className="p-5 rounded-2xl bg-white border border-line shadow-soft flex flex-col justify-between">
                 <div>
                   <span className="text-[11px] font-bold text-[#0068B0] uppercase tracking-wider">Method 03</span>
-                  <h4 className="text-sm font-bold text-charcoal mt-1 mb-1">Online Form</h4>
+                  <h3 className="text-sm font-bold text-charcoal mt-1 mb-1">Online Form</h3>
                   <p className="text-xs text-muted leading-relaxed">Submit the patient request form below for prompt WhatsApp confirmation.</p>
                 </div>
                 <span className="text-xs font-semibold text-[#0068B0] mt-3">Direct Form Below ↓</span>
@@ -104,7 +104,7 @@ export default function ContactPage() {
               <div className="p-5 rounded-2xl bg-blue-50/40 border border-[#0068B0]/30 shadow-soft flex flex-col justify-between">
                 <div>
                   <span className="text-[11px] font-bold text-[#0068B0] uppercase tracking-wider">Method 04</span>
-                  <h4 className="text-sm font-bold text-charcoal mt-1 mb-1">Scan QR Code</h4>
+                  <h3 className="text-sm font-bold text-charcoal mt-1 mb-1">Scan QR Code</h3>
                   <p className="text-xs text-muted leading-relaxed">Scan with your smartphone camera to book online on TatvaCare portal.</p>
                 </div>
                 <span className="text-xs font-bold text-emerald-700 mt-3">Instant Portal Booking ↓</span>
@@ -116,7 +116,7 @@ export default function ContactPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
-            
+
             {/* Left Column: Direct Appointment Form */}
             <div className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-line shadow-soft">
               <div className="mb-6">
@@ -266,7 +266,7 @@ export default function ContactPage() {
 
             {/* Right Column: Contact Details Cards */}
             <div className="lg:col-span-5 space-y-6">
-              
+
               {/* Reception Photo Card */}
               <div className="bg-white rounded-3xl overflow-hidden border border-line shadow-soft group">
                 <div className="relative h-56 w-full overflow-hidden">
@@ -288,7 +288,7 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Emergency Banner */}
               <div className="p-6 rounded-3xl bg-red-50 border border-red-100 shadow-soft">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#C03A21] block mb-1">

@@ -4,13 +4,27 @@ import Footer from "@/components/Footer";
 import SubpageHero from "@/components/SubpageHero";
 import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
-import { CheckCircle2, Zap, Activity } from "lucide-react";
+import Image from "next/image";
+import { CheckCircle2 } from "lucide-react";
 
-import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
+import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd, getFaqJsonLd } from "@/lib/seo";
+
+const arthroscopyFaqs = [
+  {
+    question: "When is arthroscopic keyhole surgery recommended?",
+    answer:
+      "Arthroscopy may be advised when knee or shoulder injuries—such as ACL/PCL ligament tears, locked meniscus tears, loose cartilage fragments, or rotator cuff tears—cause persistent instability, locking, or pain that does not improve with rest and physiotherapy.",
+  },
+  {
+    question: "How is keyhole arthroscopy different from open joint surgery?",
+    answer:
+      "Arthroscopy uses tiny puncture incisions (around 4–5 mm) and a narrow high-definition camera rather than a large open cut, allowing surgeons to inspect and repair intra-articular structures with minimal disturbance to surrounding muscle and skin.",
+  },
+];
 
 export const metadata = buildMeta({
-  title: "Arthroscopic Surgery in Chintamani | Indira Hospital",
-  description: "Minimally invasive keyhole joint surgery in Chintamani: ACL/PCL ligament reconstruction, meniscus repair, and rotator cuff surgery.",
+  title: "Arthroscopy & Keyhole Surgery in Chintamani | Indira Hospital",
+  description: "Minimally invasive arthroscopy in Chintamani for ACL/PCL ligament tears, meniscus repair, and shoulder injuries at Indira Hospital.",
   path: "/specialities/arthroscopy",
 });
 
@@ -54,6 +68,8 @@ export default function ArthroscopyPage() {
     { name: "Arthroscopy", path: "/specialities/arthroscopy" },
   ]);
 
+  const faqJsonLd = getFaqJsonLd(arthroscopyFaqs);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
       <script
@@ -63,6 +79,10 @@ export default function ArthroscopyPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Navbar isHeroFloating={false} />
 
@@ -109,6 +129,22 @@ export default function ArthroscopyPage() {
             </div>
 
             <div className="lg:col-span-4 space-y-6">
+              <div className="bg-white rounded-3xl overflow-hidden border border-line shadow-soft group">
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image
+                    src="/images/facilities/modular-ot-carm.jpg"
+                    alt="Modular Operation Theatre for Arthroscopic Keyhole Surgery at Indira Hospital, Chintamani"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-[10px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white px-2.5 py-1 rounded border border-white/20">
+                    Sterile Modular OT Suite
+                  </span>
+                </div>
+              </div>
+
               <div className="bg-white rounded-3xl p-8 border border-line shadow-soft space-y-5">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#0068B0]">
                   Recovery Advantage
@@ -144,6 +180,31 @@ export default function ArthroscopyPage() {
                   </Link>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Arthroscopy Patient Guidance FAQs */}
+          <div className="border-t border-line pt-16">
+            <div className="max-w-3xl mb-8">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0068B0] block mb-1">
+                Patient Education
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-charcoal">
+                Common Questions About Keyhole Arthroscopy
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {arthroscopyFaqs.map((faq) => (
+                <div key={faq.question} className="bg-white rounded-2xl p-6 border border-line shadow-soft">
+                  <h3 className="text-base font-bold font-heading text-charcoal mb-2">
+                    {faq.question}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed font-light">
+                    {faq.answer}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 

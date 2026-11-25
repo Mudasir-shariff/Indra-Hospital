@@ -3,16 +3,28 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SubpageHero from "@/components/SubpageHero";
 import CtaSection from "@/components/CtaSection";
-import Link from "next/link";
 import Image from "next/image";
-import { CheckCircle2, ShieldAlert, Activity, Clock, Phone, Sparkles } from "lucide-react";
+import { CheckCircle2, ShieldAlert, Phone } from "lucide-react";
 import { siteData } from "@/data/site";
 
-import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
+import { buildMeta, getSpecialityJsonLd, getBreadcrumbJsonLd, getFaqJsonLd } from "@/lib/seo";
+
+const traumaFaqs = [
+  {
+    question: "What should you do immediately after a suspected fracture?",
+    answer:
+      "Keep the injured limb still and avoid trying to straighten or move the bone. Immobilize the area gently with a clean splint or sling if available, control any external bleeding with clean cloth pressure, avoid eating or drinking in case emergency surgery is needed, and visit an emergency hospital equipped with X-ray and orthopaedic trauma care promptly.",
+  },
+  {
+    question: "When should you seek immediate emergency medical attention after an injury?",
+    answer:
+      "Seek urgent 24/7 casualty care immediately if there is severe pain, visible limb deformity, inability to bear weight or move fingers/toes, an open wound over a suspected fracture, heavy bleeding, numbness or coldness in the limb, or trauma from a road accident or fall from height.",
+  },
+];
 
 export const metadata = buildMeta({
-  title: "Trauma & Fracture Surgery in Chintamani | Indira Hospital",
-  description: "24/7 emergency fracture care & trauma surgery in Chintamani: ORIF/CRIF fixation, interlocking nailing, and pelvic trauma management.",
+  title: "Fracture & Trauma Care Hospital in Chintamani | Indira Hospital",
+  description: "24/7 emergency fracture treatment and trauma care in Chintamani. Digital DR X-ray, C-Arm fixation, ORIF/CRIF, and orthopaedic casualty.",
   path: "/specialities/trauma-fracture",
 });
 
@@ -52,6 +64,8 @@ export default function TraumaFracturePage() {
     { name: "Trauma & Fracture Care", path: "/specialities/trauma-fracture" },
   ]);
 
+  const faqJsonLd = getFaqJsonLd(traumaFaqs);
+
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
       <script
@@ -61,6 +75,10 @@ export default function TraumaFracturePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Navbar isHeroFloating={false} />
 
@@ -76,7 +94,7 @@ export default function TraumaFracturePage() {
 
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
             <div className="lg:col-span-8 space-y-6">
               <h2 className="text-2xl sm:text-3xl font-bold font-heading text-charcoal tracking-tight">
@@ -197,6 +215,31 @@ export default function TraumaFracturePage() {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Emergency Fracture First-Aid & Guidance FAQs */}
+          <div className="border-t border-line pt-16 mt-16">
+            <div className="max-w-3xl mb-8">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#C03A21] block mb-1">
+                Emergency Guidance
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-charcoal">
+                What to Do After a Fracture or Injury
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {traumaFaqs.map((faq) => (
+                <div key={faq.question} className="bg-white rounded-2xl p-6 border border-line shadow-soft">
+                  <h3 className="text-base font-bold font-heading text-charcoal mb-2">
+                    {faq.question}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed font-light">
+                    {faq.answer}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 

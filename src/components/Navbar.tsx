@@ -54,8 +54,9 @@ export default function Navbar({ isHeroFloating = true }: { isHeroFloating?: boo
             <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-line bg-white flex-shrink-0">
               <Image
                 src="/brand/indira-logo.jpg"
-                alt="Indira Hospital Logo"
+                alt="Indira Hospital Chintamani Logo"
                 fill
+                sizes="40px"
                 className="object-cover"
                 priority
               />
@@ -171,8 +172,9 @@ export default function Navbar({ isHeroFloating = true }: { isHeroFloating?: boo
                 <div className="relative w-8 h-8 rounded-full overflow-hidden border border-line">
                   <Image
                     src="/brand/indira-logo.jpg"
-                    alt="Logo"
+                    alt="Indira Hospital Logo"
                     fill
+                    sizes="32px"
                     className="object-cover"
                   />
                 </div>
@@ -188,6 +190,7 @@ export default function Navbar({ isHeroFloating = true }: { isHeroFloating?: boo
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="p-2 rounded-full hover:bg-blue-50 text-charcoal"
+                aria-label="Close navigation menu"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -202,6 +205,7 @@ export default function Navbar({ isHeroFloating = true }: { isHeroFloating?: boo
               <a
                 href={`tel:${siteData.contact.emergency}`}
                 className="p-2 rounded-lg bg-[#C03A21] text-white"
+                aria-label="Call 24/7 Emergency Casualty"
               >
                 <Phone className="w-4 h-4" />
               </a>

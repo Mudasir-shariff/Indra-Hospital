@@ -7,13 +7,16 @@ import SubpageHero from "@/components/SubpageHero";
 import CtaSection from "@/components/CtaSection";
 import { siteData } from "@/data/site";
 import { facilityPhotos } from "@/data/facilities";
-import { Award, Building2, HeartHandshake, ShieldCheck, CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
-import { buildMeta, getBreadcrumbJsonLd } from "@/lib/seo";
+import { buildMeta, getBreadcrumbJsonLd, getWebPageJsonLd } from "@/lib/seo";
+
+const aboutTitle = "About Indira Hospital, Chintamani | Established 1998";
+const aboutDesc = "Founded in 1998, Indira Hospital is a 30-bed superspeciality and multispeciality hospital in Chintamani offering Orthopaedics, Urology, and General Medicine.";
 
 export const metadata = buildMeta({
-  title: "About INDIRA HOSPITAL | Super Speciality & Multispeciality Hospital, Chintamani",
-  description: "Established in 1998, Indira Hospital is Chintamani's trusted 30-bed Super Speciality & Multispeciality Hospital offering Daily OPD in Orthopaedics, Urology, and General Medicine, plus specialist care in Nephrology and Dermatology.",
+  title: aboutTitle,
+  description: aboutDesc,
   path: "/about",
 });
 
@@ -21,6 +24,12 @@ export default function AboutPage() {
   const breadcrumbJsonLd = getBreadcrumbJsonLd([
     { name: "About Us", path: "/about" },
   ]);
+  const webPageJsonLd = getWebPageJsonLd({
+    name: aboutTitle,
+    description: aboutDesc,
+    path: "/about",
+    type: "AboutPage",
+  });
 
   return (
     <main className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#17212B]">
@@ -28,18 +37,22 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
       <Navbar isHeroFloating={false} />
-      
+
       <SubpageHero
         category="Hospital Background & Legacy"
-        title="Over 28 Years of Healing with Compassion and Precision"
-        subtitle="The journey of Indira Hospital, Chintamani — from a dedicated outpatient clinic in 1998 to a modern 30-bed Super Speciality & Multispeciality Hospital."
+        title="Over 28 Years of Trusted Healthcare in Chintamani"
+        subtitle="The journey of Indira Hospital, Chintamani — from a dedicated outpatient clinic in 1998 to a modern 30-bed Super Speciality & Multispeciality Hospital serving Chikkaballapur district and nearby towns."
         breadcrumbs={[{ label: "Home", href: "/" }]}
       />
 
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Main Story Paragraphs */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
             <div className="lg:col-span-8 space-y-6 text-base sm:text-lg text-charcoal/90 leading-relaxed font-light">
